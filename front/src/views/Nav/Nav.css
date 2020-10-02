@@ -1,0 +1,35 @@
+div{
+    background-color: black;    
+    display: flex;
+    flex-direction: row;
+    flex-grow: 1;
+    height: 200px;
+    
+}
+
+.logo{
+    height: 100px;
+    padding:10px;
+}
+.image{
+    padding:10px;
+}
+
+ul{
+    display: flex;
+    flex-direction: row;
+    flex-grow: 1;
+    list-style-type: none;
+}
+li{
+    color : white;
+    text-decoration: none;
+    padding : 30px;
+    font-size: 35px;
+    font-family:  Helvetica Bold Oblique;
+}
+
+a, a:visited{
+    color : white;
+    text-decoration: none;
+}
