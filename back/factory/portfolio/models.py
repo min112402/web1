@@ -8,9 +8,9 @@ class Goods(models.Model):
     detail = models.TextField()
     price  = models.IntegerField()
     
-    def add_Goods(self, name = 'nonamed', image = None,  detail = '', price = None):
+    def add_Goods(self, name = 'unnamed', thumbnail = None,  detail = '', price = None):
         self.name = name
-        self.thumbnail = image 
+        self.thumbnail = thumbnail 
         self.detail = detail
         self.price = price
         self.save()
@@ -24,5 +24,12 @@ class Portfolio(models.Model):
     detail = models.TextField()
     production_date = models.DateField()
 
-    
+    def add_Goods(self, title = 'untitled', thumbnail = None,  detail = '', production_date = None):
+        self.title = title
+        self.thumbnail = thumbnail 
+        self.detail = detail
+        self.production_date = production_date
+        self.save()
 
+    def __str__(self):
+        return self.title
