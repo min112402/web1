@@ -1,9 +1,9 @@
-div{
-    background-color: black;    
+.nav{
+    background-color: black;
     display: flex;
     flex-direction: row;
     flex-grow: 1;
-    height: 200px;
+    height: 180px;
     
 }
 
@@ -22,7 +22,6 @@ ul{
     list-style-type: none;
 }
 li{
-    color : white;
     text-decoration: none;
     padding : 30px;
     font-size: 35px;

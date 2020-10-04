@@ -11,16 +11,18 @@ import Nav from './views/Nav/Nav'
 
 function App() {
   return (
-    <BrowserRouter>
-      <Nav/>
-      <Fragment>
-        <Switch>
-          <Route exact path="/" component={LandingPage}></Route>
-          <Route path="/shop" component={Shop}></Route>
-          <Route path="/portfolio" component={Portfolio}></Route>
-          <Route path="/contact" component={Contact}></Route>
-        </Switch>
-      </Fragment>
+    <BrowserRouter >
+      <div className="wrapper">
+        <Nav />
+        <Fragment>
+          <Switch>
+            <Route exact path="/" component={LandingPage} />
+            <Route path="/shop" component={Shop} />
+            <Route path="/portfolio" component={Portfolio} />
+            <Route path="/contact" component={Contact} />
+          </Switch>
+        </Fragment>
+      </div>
     </BrowserRouter>    
     
   );

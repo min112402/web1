@@ -5,8 +5,8 @@ import logo from "../../logo.png"
 import img2 from "../../img2.png"
 function Nav() {
     return (
-        <div>
-            <Link to="/"><img class="logo" src = {logo} alt="logo"></img></Link>
+        <div className="nav">
+            <Link to="/"><img className="logo" src = {logo} alt="logo"></img></Link>
             <ul>
                 <li>
                     <Link to="/shop">SHOP</Link>
@@ -18,7 +18,7 @@ function Nav() {
                     <Link to="/Contact">CONTACT</Link>
                 </li>
             </ul>
-            <img class="image" src = {img2} alt="img2"></img>
+            <img className="image" src = {img2} alt="img2"></img>
         </div>
     )
 }
