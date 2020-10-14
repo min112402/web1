@@ -1,39 +1,20 @@
-import React from 'react'
-import './Shop.css'
-
-class Shop extends React.Component {
-    state = {
-        goods : []
-    }
-
-    componentDidMount() {
-        fetch("/api/goods/")
-            .then(response =>response.json())
-            .then(goodsList => {
-                this.setState({goods: goodsList})
-            })
-    }
+import React from "react"
+import { Route, useRouteMatch } from "react-router-dom"
+import ItemList from "./ItemList"
+import ItemDetail from "./ItemDetail"
 
 
-    render(){
-        return(
-            <div className="itemContainerWrapper">
-                <div className="itemContainer">
-                    {this.state.goods.map((goods) =>(
-                        <div className="item" key = {goods.id}> 
-                            <img src = {goods.thumbnail}  />
-                            <span>
-                            {goods.name} 
-                            </span>
-                            <span>
-                            {goods.price}
-                            </span>
-                        </div>
-                    ))}
-                </div>
-            </div>
-        )
-    }
+
+function Shop ({match}) {
+    return (
+        <div>
+            <h1>Shop</h1>
+            <Route exact path={match.path} component={ItemList} />
+            <Route path={`${match.path}/:name`} component={ItemDetail} />
+        </div>
+    )
+    
 }
+
 
 export default Shop

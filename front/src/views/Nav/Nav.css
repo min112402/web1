@@ -2,18 +2,18 @@
     background-color: black;
     display: flex;
     flex-direction: row;
-    height: 162px;
+    height: 150px;
 
     
 }
 
 .logoWrapper{
-    flex: 1 1 auto;
+    flex: 0 0 auto;
 }
 
 .logoWrapper img{
-    max-height: 162px;
-    
+    max-height: 50%;
+    max-width: 70%;
 }
 
 .linkWrapper{
@@ -24,13 +24,13 @@
 }
 
 .imageWrapper{
-    flex: 1 1 auto;
+    flex: 0 0 auto;
 }
 
 
-.imageWrapper img{
-    max-height: 162px;
-    
+.image{
+    max-height: 150px;
+    max-width: 100%;
 }
 
 

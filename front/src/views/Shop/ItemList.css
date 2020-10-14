@@ -9,21 +9,20 @@
     flex-flow: row wrap;
 }
 
-.item{
+.item {
     flex: 1 1 auto;
-    height: 1600px;
+    height: 600px;
     align-items: center;
     display: flex;
     flex-flow: column;
     transition: .5s ease;
-
 }
 
-.item img:hover{
+.thumbnail:hover{
     opacity: 0.3;
 }
 
-.item img{
+.thumbnail{
     opacity: 1;
     transition: 0.4s ease;
     max-width: 100%;
