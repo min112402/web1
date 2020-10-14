@@ -1,0 +1,37 @@
+.itemContainerWrapper{
+    display: flex;
+    justify-content: center;
+}
+
+.itemContainer{
+    width: 80%;
+    display: flex;
+    flex-flow: row wrap;
+}
+
+.item{
+    flex: 1 1 auto;
+    height: 1600px;
+    align-items: center;
+    display: flex;
+    flex-flow: column;
+    transition: .5s ease;
+
+}
+
+.item img:hover{
+    opacity: 0.3;
+}
+
+.item img{
+    opacity: 1;
+    transition: 0.4s ease;
+    max-width: 100%;
+    max-height: 80%;
+}
+
+.item span{
+    flex: 1 1 auto;
+    font-size: 30px;
+    font-family: Arial, Helvetica, sans-serif;
+}

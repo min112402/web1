@@ -2,30 +2,57 @@
     background-color: black;
     display: flex;
     flex-direction: row;
-    flex-grow: 1;
-    height: 180px;
+    height: 162px;
+
     
 }
+
+.logoWrapper{
+    flex: 1 1 auto;
+}
+
+.logoWrapper img{
+    max-height: 162px;
+    
+}
+
+.linkWrapper{
+    flex: 8 1 auto;
+    display: flex;
+    align-content: center;
+
+}
+
+.imageWrapper{
+    flex: 1 1 auto;
+}
+
+
+.imageWrapper img{
+    max-height: 162px;
+    
+}
+
 
 .logo{
     height: 100px;
     padding:10px;
 }
-.image{
-    padding:10px;
-}
 
 ul{
+    max-width: 1600px;
     display: flex;
     flex-direction: row;
     flex-grow: 1;
     list-style-type: none;
+    align-items: center;
 }
 li{
+    flex: 1 1 auto;
     text-decoration: none;
     padding : 30px;
     font-size: 35px;
-    font-family:  Helvetica Bold Oblique;
+    font-family:  Arial, Helvetica, sans-serif;
 }
 
 a, a:visited{

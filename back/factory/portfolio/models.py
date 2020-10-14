@@ -4,7 +4,7 @@ from django.utils import timezone
 
 class Goods(models.Model):
     name = models.CharField(max_length = 100)
-    thumbnail = models.ImageField(blank =True)
+    thumbnail = models.ImageField(blank =True, upload_to="goods/thumbnail")
     detail = models.TextField()
     price  = models.IntegerField()
     
