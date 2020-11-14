@@ -1,10 +1,18 @@
 import React from 'react'
 import './ItemList.css'
 import { Route,Link } from "react-router-dom"
-
+import {Dropdown} from 'react-bootstrap'
 class ItemList extends React.Component {
     state = {
         goods : []
+    }
+    handleSort = (cmp)=>{
+        this.setState(prevState => ({
+            goods: prevState.goods.sort(cmp)
+        }))
+    }
+    ascendingPrice(a,b){
+        return a.price<b.price
     }
 
     componentDidMount() {
@@ -18,6 +26,20 @@ class ItemList extends React.Component {
 
     render(){
         return(
+            <div>
+                <div className="itemListNav"> 
+                <Dropdown>
+                    <Dropdown.Toggle id="dropdown-basic">
+                        정렬 방식
+                    </Dropdown.Toggle>
+                    <Dropdown.Menu>
+                        <Dropdown.Item  >신규상품순</Dropdown.Item>
+                        <Dropdown.Item  >낮은가격순</Dropdown.Item>
+                        <Dropdown.Item >높은가격순</Dropdown.Item>
+                    </Dropdown.Menu>
+                </Dropdown>
+
+                </div>
             <div className="itemContainerWrapper">
                 <div className="itemContainer">
                     {this.state.goods.map((goods) =>(
@@ -35,7 +57,7 @@ class ItemList extends React.Component {
                     ))}
                 </div>
             </div>
-
+            </div>
         )
     }
 }
