@@ -3,18 +3,25 @@ import './ItemList.css'
 import { Route,Link } from "react-router-dom"
 import {Dropdown} from 'react-bootstrap'
 class ItemList extends React.Component {
-    state = {
-        goods : []
+    constructor(props){
+        super(props)
+        this.state = {
+            goods : []
+        }
+        this.handleSort = this.handleSortL.bind(this)
+        
     }
-    handleSort = (cmp)=>{
-        this.setState(prevState => ({
-            goods: prevState.goods.sort(cmp)
+    handleSortL = ()=>{
+        this.setState(({goods}) => ({
+            goods: goods.sort(this.ascendingPrice)
         }))
     }
     ascendingPrice(a,b){
         return a.price<b.price
     }
-
+    descendingPrice(a,b){
+        return a.price>b.price
+    }
     componentDidMount() {
         fetch("/api/goods/")
             .then(response =>response.json())
@@ -34,17 +41,17 @@ class ItemList extends React.Component {
                     </Dropdown.Toggle>
                     <Dropdown.Menu>
                         <Dropdown.Item  >신규상품순</Dropdown.Item>
-                        <Dropdown.Item  >낮은가격순</Dropdown.Item>
+                        <Dropdown.Item onClick = {this.handleSort} >낮은가격순</Dropdown.Item>
                         <Dropdown.Item >높은가격순</Dropdown.Item>
                     </Dropdown.Menu>
                 </Dropdown>
-
+                <button onClick = {this.handleSort}  >낮은가격순</button>
                 </div>
             <div className="itemContainerWrapper">
                 <div className="itemContainer">
                     {this.state.goods.map((goods) =>(
-                        <Link to= {this.props.match.path + "/"+ goods.name} >
-                        <div className="item" key = {goods.id}> 
+                        <Link to= {this.props.match.path + "/"+ goods.name} key = {goods.id}>
+                        <div className="item" > 
                             <img className="thumbnail" src = {goods.thumbnail}  />
                             <span>
                                 {goods.name}
