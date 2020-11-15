@@ -9,7 +9,6 @@ class ItemList extends React.Component {
             goods : []
         }
         this.handleSort = this.handleSortL.bind(this)
-        
     }
     handleSortL = ()=>{
         this.setState(({goods}) => ({

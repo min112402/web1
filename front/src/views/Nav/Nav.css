@@ -51,7 +51,7 @@ li{
     font-family:  Arial, Helvetica, sans-serif;
 }
 
-a, a:visited{
+a, a:visited, a:hover{
     color : white;
     text-decoration: none;
 }

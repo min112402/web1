@@ -1,4 +1,5 @@
+front/node_modules/.cache
 test_data
 .cache
 __pycache__
-front/node_modules/.cache/
+*node_modules/*
