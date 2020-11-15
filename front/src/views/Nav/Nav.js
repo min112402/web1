@@ -12,13 +12,13 @@ function Nav() {
             <div className="linkWrapper">
                 <ul>
                     <li>
-                        <Link to="/shop">SHOP</Link>
+                        <Link to="/shop" style={{ textDecoration: 'none' }}>SHOP</Link>
                     </li>
                     <li>
-                        <Link to="/Portfolio">PORTFOLIO</Link>
+                        <Link to="/Portfolio" style={{ textDecoration: 'none' }}>PORTFOLIO</Link>
                     </li>
                     <li>
-                        <Link to="/Contact">CONTACT</Link>
+                        <Link to="/Contact" style={{ textDecoration: 'none' }}>CONTACT</Link>
                     </li>
                 </ul>
             </div>

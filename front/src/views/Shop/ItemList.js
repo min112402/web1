@@ -30,7 +30,6 @@ class ItemList extends React.Component {
             })
     }
 
-
     render(){
         return(
             <div>
