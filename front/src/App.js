@@ -9,23 +9,29 @@ import Shop from './views/Shop/Shop';
 
 import Nav from './views/Nav/Nav'
 
-function App() {
-  return (
+class App extends React.Component {
+
+  
+  render(){
+    return (
     <BrowserRouter >
       <div className="wrapper">
         <Nav />
         <Fragment>
-          <Switch>
-            <Route exact path="/" component={LandingPage} />
-            <Route path="/shop" component={Shop} />
-            <Route path="/portfolio" component={Portfolio} />
-            <Route path="/contact" component={Contact} />
-          </Switch>
+          <div class="contentContainer">
+            <Switch>
+              <Route exact path="/" component={LandingPage} />
+              <Route path="/shop" component={Shop} />
+              <Route path="/portfolio" component={Portfolio} />
+              <Route path="/contact" component={Contact} />
+            </Switch>
+          </div>
         </Fragment>
       </div>
     </BrowserRouter>    
     
   );
+}
 }
 
 
