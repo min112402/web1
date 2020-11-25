@@ -18,7 +18,7 @@ function Nav() {
                         <Link to="/Portfolio" style={{ textDecoration: 'none' }}>PORTFOLIO</Link>
                     </li>
                     <li>
-                        <Link to="/Contact" style={{ textDecoration: 'none' }}>CONTACT</Link>
+                        <a href="https://www.instagram.com/kwon_thefact0ry" target="_blank" rel="noreferrer noopener" style={{ textDecoration: 'none' }}>CONTACT</a>
                     </li>
                 </ul>
             </div>

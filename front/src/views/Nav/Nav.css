@@ -1,17 +1,23 @@
-.nav{
+    @supports (font-variation-settings: 'wdth' 115) {
+      h1 {
+        font-family: variable-font-family, sans-serif;
+      }
+    }
+
+    .nav{
     z-index: 1;
-    font-style: oblique;
     background-color: black;
+    font-weight: 900;
     position: fixed;
     width: 100%;
     flex-direction: row;
     height: 90px;
     }
-    
+
     .logoWrapper{
     flex: 3 1;
     }
-    
+
     .linkWrapper{
     flex: 4 1;
     display: block;
@@ -19,12 +25,12 @@
     align-content: center;
     height: 140px;
     }
-    
+
     .imageWrapper{
     flex: 3 1;
     }
-    
-    
+
+
     .image{
     display: flex;
     margin: auto;
@@ -32,17 +38,17 @@
     height: 120px;
     object-fit: contain;
     }
-    
+
     .leftLink{
     }
-    
+
     .logo{
     height: 60px;
     margin-bottom: 10px;
     float: left;
     object-fit: contain;
     }
-    
+
     ul{
     max-width: 1600px;
     display: flex;
@@ -51,6 +57,7 @@
     list-style-type: none;
     align-items: center;
     }
+
     li{
     flex: 1 1 auto;
     text-decoration: none;
@@ -58,8 +65,8 @@
     font-size: 30px;
     font-family: Arial, Helvetica, sans-serif;
     }
-    
-    a, a:visited{
+
+    a, a:visited {
     color : white;
     text-decoration: none;
     }
