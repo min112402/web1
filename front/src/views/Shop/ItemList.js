@@ -7,7 +7,6 @@ import _ from 'lodash'
 =======
 import frame from "../../frame0.png"
 import frame1 from "../../frame1.png"
->>>>>>> b870231a3a951f3ea62810a4337082bfba2effa5
 class ItemList extends React.Component {
     constructor(props){
         super(props)
@@ -62,7 +61,6 @@ class ItemList extends React.Component {
                                 </div>
                                 <img className="thumbnail" src = {goods.thumbnail}  />
                             </div>
->>>>>>> b870231a3a951f3ea62810a4337082bfba2effa5
                             <span>
                                 {goods.name}
                             </span>
