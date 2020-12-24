@@ -7,12 +7,14 @@ class Goods(models.Model):
     thumbnail = models.ImageField(blank =True, upload_to="goods/thumbnail")
     detail = models.TextField()
     price  = models.IntegerField()
-    
+    production_date = models.DateTimeField(auto_now_add=True)
+
     def add_Goods(self, name = 'unnamed', thumbnail = None,  detail = '', price = None):
         self.name = name
-        self.thumbnail = thumbnail 
+        self.thumbnail = thumbnail
         self.detail = detail
         self.price = price
+        self.production_date = production_date
         self.save()
 
     def __str__(self):
@@ -26,7 +28,7 @@ class Portfolio(models.Model):
 
     def add_Goods(self, title = 'untitled', thumbnail = None,  detail = '', production_date = None):
         self.title = title
-        self.thumbnail = thumbnail 
+        self.thumbnail = thumbnail
         self.detail = detail
         self.production_date = production_date
         self.save()

@@ -7,11 +7,11 @@ class GoodsListSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Goods
-        fields = ('name', 'thumbnail', 'price')
+        fields = ('name', 'thumbnail', 'price', 'production_date')
 
 
 class GoodsListView(generics.ListAPIView):
-    queryset = Goods.objects.all()
+    queryset = Goods.objects.all().order_by('-production_date')
     serializer_class = GoodsListSerializer
 
     def list(self, request):

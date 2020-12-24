@@ -1,3 +1,11 @@
+<<<<<<< HEAD
+
+.itemListNav{
+  display: flex;
+  float: right;
+}
+
+=======
 .frame{
     position: absolute;
 }
@@ -37,6 +45,7 @@
     display: block;
     object-fit: cover;
 }
+>>>>>>> b870231a3a951f3ea62810a4337082bfba2effa5
 
 .itemContainerWrapper{
     display: flex;
