@@ -2,6 +2,8 @@ import React from 'react'
 import './ItemList.css'
 import { Route,Link } from "react-router-dom"
 import {Dropdown} from 'react-bootstrap'
+import frame from "../../frame0.png"
+import frame1 from "../../frame1.png"
 class ItemList extends React.Component {
     constructor(props){
         super(props)
@@ -50,7 +52,15 @@ class ItemList extends React.Component {
                     {this.state.goods.map((goods) =>(
                         <Link to= {this.props.match.path + "/"+ goods.name} key = {goods.id}>
                         <div className="item" > 
-                            <img className="thumbnail" src = {goods.thumbnail}  />
+                            <div className="frameWrapper">
+                                <div className="frame">
+                                    <div className="topLeft"><img src={frame}></img> </div>
+                                    <div className="topRight"><img src={frame1}></img> </div>
+                                    <div className="bottomLeft"><img src={frame1}></img> </div>
+                                    <div className="bottomRight"><img src={frame}></img> </div>
+                                </div>
+                                <img className="thumbnail" src = {goods.thumbnail}  />
+                            </div>
                             <span>
                                 {goods.name}
                             </span> 
