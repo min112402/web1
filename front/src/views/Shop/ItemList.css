@@ -1,3 +1,10 @@
+
+.itemListNav{
+  display: flex;
+  float: right;
+}
+
+
 .itemContainerWrapper{
     display: flex;
     justify-content: center;

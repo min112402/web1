@@ -13,7 +13,7 @@ function Shop ({match}) {
             <Route path={`${match.path}/:name`} component={ItemDetail} />
         </div>
     )
-    
+
 }
 
 

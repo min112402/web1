@@ -2,24 +2,14 @@ import React from 'react'
 import './ItemList.css'
 import { Route,Link } from "react-router-dom"
 import {Dropdown} from 'react-bootstrap'
+import _ from 'lodash'
 class ItemList extends React.Component {
     constructor(props){
         super(props)
         this.state = {
-            goods : []
+            goods : [],
+            sortColumn : { path : 'production_date', order : 'asc'}
         }
-        this.handleSort = this.handleSortL.bind(this)
-    }
-    handleSortL = ()=>{
-        this.setState(({goods}) => ({
-            goods: goods.sort(this.ascendingPrice)
-        }))
-    }
-    ascendingPrice(a,b){
-        return a.price<b.price
-    }
-    descendingPrice(a,b){
-        return a.price>b.price
     }
     componentDidMount() {
         fetch("/api/goods/")
@@ -28,32 +18,36 @@ class ItemList extends React.Component {
                 this.setState({goods: goodsList})
             })
     }
+    handleSort(path) {
+		      const sortColumn = { ...this.state.sortColumn };
+		      if (sortColumn.path === path) sortColumn.order = sortColumn.order === 'asc' ? 'desc' : 'asc';
+		      else {
+			           sortColumn.path = path;
+			           sortColumn.order = 'asc';
+		           }
+		      this.setState({ sortColumn });
+	 };
+
 
     render(){
+        const { sortColumn, goods } = this.state;
+        const sorted = _.orderBy(goods, [sortColumn.path], [sortColumn.order]);
         return(
             <div>
-                <div className="itemListNav"> 
-                <Dropdown>
-                    <Dropdown.Toggle id="dropdown-basic">
-                        정렬 방식
-                    </Dropdown.Toggle>
-                    <Dropdown.Menu>
-                        <Dropdown.Item  >신규상품순</Dropdown.Item>
-                        <Dropdown.Item onClick = {this.handleSort} >낮은가격순</Dropdown.Item>
-                        <Dropdown.Item >높은가격순</Dropdown.Item>
-                    </Dropdown.Menu>
-                </Dropdown>
-                <button onClick = {this.handleSort}  >낮은가격순</button>
+                <div className="itemListNav">
+                  <button onClick = {() => this.handleSort('name')} >날짜</button>
+                  <button onClick = {() => this.handleSort('production_date')} >가격</button>
+                  <button onClick = {() => this.handleSort('price')} >이름</button>
                 </div>
             <div className="itemContainerWrapper">
                 <div className="itemContainer">
-                    {this.state.goods.map((goods) =>(
+                    {sorted.map((goods) =>(
                         <Link to= {this.props.match.path + "/"+ goods.name} key = {goods.id}>
-                        <div className="item" > 
+                        <div className="item" >
                             <img className="thumbnail" src = {goods.thumbnail}  />
                             <span>
                                 {goods.name}
-                            </span> 
+                            </span>
                             <span>
                                 {goods.price}
                             </span>
