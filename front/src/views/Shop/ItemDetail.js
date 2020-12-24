@@ -54,14 +54,16 @@ class ItemDetail extends React.Component {
                             <span>price: {this.state.price}  </span>
                             <ColoredLine color="gray"/>
                             <span>link <a href="https://smartstore.naver.com/kwonthefactory">스토어</a>  </span>
+                            <ColoredLine color="gray"/>
+                            <span>{this.state.detail}</span>
                         </div>
                     </div>
                     <div className = "body">
-                        <span>{this.state.detail}</span>
                     </div>
                     <div className = "footer">
                         
                     </div>
+
                 </div>
             </div>
         )

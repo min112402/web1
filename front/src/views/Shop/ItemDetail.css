@@ -6,6 +6,7 @@
     max-height: 600px;
 }
 .itemDetailContainerWrapper{
+    padding-top: 50px;
     display: flex;
     justify-content: center;
 }
