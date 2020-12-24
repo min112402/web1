@@ -1,6 +1,14 @@
 import React from 'react'
 import './ItemDetail.css'
 
+const ColoredLine = ({ color }) => (
+    <hr
+      style={{
+        borderColor: color,
+      }}
+    />
+  );
+
 class ItemDetail extends React.Component {
     state = {
         name : '',
@@ -16,6 +24,7 @@ class ItemDetail extends React.Component {
             path : props.match.path
         }
     }
+    
 
     componentDidMount() {
         let name = this.state.name
@@ -33,12 +42,26 @@ class ItemDetail extends React.Component {
 
     render(){
         return(
-            <div className="itemContainerWrapper">
-                <div className="itemContainer">
-                    <h2>{this.state.name}</h2>
-                    <img src= {this.state.thumbnail}></img>
-                    <p>detail:  {this.state.detail}</p>
-                    <p>price: {this.state.price}</p>
+            <div className="itemDetailContainerWrapper">
+                <div className="itemDetailContainer">
+                    <div className="header">
+                        <div className ="detailImage">
+                            <img src={this.state.thumbnail}></img> 
+                        </div>
+                        <div className = "info">
+                            <h3>{this.state.name} </h3>
+                            <ColoredLine color="gray"/>
+                            <span>price: {this.state.price}  </span>
+                            <ColoredLine color="gray"/>
+                            <span>link <a href="https://smartstore.naver.com/kwonthefactory">스토어</a>  </span>
+                        </div>
+                    </div>
+                    <div className = "body">
+                        <span>{this.state.detail}</span>
+                    </div>
+                    <div className = "footer">
+                        
+                    </div>
                 </div>
             </div>
         )

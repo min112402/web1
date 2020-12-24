@@ -1,3 +1,7 @@
+.itemContainer img{
+    height: 400px;
+}
+
 .itemContainerWrapper{
     display: flex;
     justify-content: center;
@@ -16,6 +20,7 @@
     display: flex;
     flex-flow: column;
     transition: .5s ease;
+    margin: 0;
 }
 
 .thumbnail:hover{
@@ -26,7 +31,6 @@
     opacity: 1;
     transition: 0.4s ease;
     max-width: 100%;
-    max-height: 80%;
 }
 
 .item span{
