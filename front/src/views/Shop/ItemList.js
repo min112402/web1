@@ -2,7 +2,12 @@ import React from 'react'
 import './ItemList.css'
 import { Route,Link } from "react-router-dom"
 import {Dropdown} from 'react-bootstrap'
+<<<<<<< HEAD
 import _ from 'lodash'
+=======
+import frame from "../../frame0.png"
+import frame1 from "../../frame1.png"
+>>>>>>> b870231a3a951f3ea62810a4337082bfba2effa5
 class ItemList extends React.Component {
     constructor(props){
         super(props)
@@ -43,8 +48,21 @@ class ItemList extends React.Component {
                 <div className="itemContainer">
                     {sorted.map((goods) =>(
                         <Link to= {this.props.match.path + "/"+ goods.name} key = {goods.id}>
+<<<<<<< HEAD
                         <div className="item" >
                             <img className="thumbnail" src = {goods.thumbnail}  />
+=======
+                        <div className="item" >
+                            <div className="frameWrapper">
+                                <div className="frame">
+                                    <div className="topLeft"><img src={frame}></img> </div>
+                                    <div className="topRight"><img src={frame1}></img> </div>
+                                    <div className="bottomLeft"><img src={frame1}></img> </div>
+                                    <div className="bottomRight"><img src={frame}></img> </div>
+                                </div>
+                                <img className="thumbnail" src = {goods.thumbnail}  />
+                            </div>
+>>>>>>> b870231a3a951f3ea62810a4337082bfba2effa5
                             <span>
                                 {goods.name}
                             </span>

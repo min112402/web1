@@ -8,7 +8,6 @@ import ItemDetail from "./ItemDetail"
 function Shop ({match}) {
     return (
         <div>
-            <h1>Shop</h1>
             <Route exact path={match.path} component={ItemList} />
             <Route path={`${match.path}/:name`} component={ItemDetail} />
         </div>

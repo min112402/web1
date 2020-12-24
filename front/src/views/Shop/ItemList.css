@@ -1,9 +1,51 @@
+<<<<<<< HEAD
 
 .itemListNav{
   display: flex;
   float: right;
 }
 
+=======
+.frame{
+    position: absolute;
+}
+
+.frame .topLeft{
+    z-index: 1;
+    position: relative;
+    top: -20px;
+    left: -20px;
+    height: 10px;
+}
+
+.frame .topRight{
+    z-index: 1;
+    position: relative;
+    top: -20px;
+    left: 380px;
+    height: 10px;
+}
+.frame .bottomLeft{
+    z-index: 1;
+    position: relative;
+    top: 350px;
+    left: -20px;
+    height: 10px;
+}
+.frame .bottomRight{
+    z-index: 1;
+    position: relative;
+    top: 350px;
+    left: 370px;
+    height: 10px;
+}
+
+
+.itemContainer .thumbnail{
+    display: block;
+    object-fit: cover;
+}
+>>>>>>> b870231a3a951f3ea62810a4337082bfba2effa5
 
 .itemContainerWrapper{
     display: flex;
@@ -23,6 +65,14 @@
     display: flex;
     flex-flow: column;
     transition: .5s ease;
+    margin: 30px;
+}
+
+.frameWrapper{
+    width: 400px;
+    height: 400px;
+    overflow: hidden;
+    display: block;
 }
 
 .thumbnail:hover{
@@ -33,7 +83,6 @@
     opacity: 1;
     transition: 0.4s ease;
     max-width: 100%;
-    max-height: 80%;
 }
 
 .item span{
