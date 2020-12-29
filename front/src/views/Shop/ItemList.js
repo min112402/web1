@@ -2,9 +2,7 @@ import React from 'react'
 import './ItemList.css'
 import { Route,Link } from "react-router-dom"
 import {Dropdown} from 'react-bootstrap'
-<<<<<<< HEAD
 import _ from 'lodash'
-=======
 import frame from "../../frame0.png"
 import frame1 from "../../frame1.png"
 class ItemList extends React.Component {
@@ -23,7 +21,7 @@ class ItemList extends React.Component {
             })
     }
     handleSort(path) {
-		      const sortColumn = { ...this.state.sortColumn };
+		     const sortColumn = { ...this.state.sortColumn };
 		      if (sortColumn.path === path) sortColumn.order = sortColumn.order === 'asc' ? 'desc' : 'asc';
 		      else {
 			           sortColumn.path = path;
@@ -39,19 +37,14 @@ class ItemList extends React.Component {
         return(
             <div>
                 <div className="itemListNav">
-                  <button onClick = {() => this.handleSort('name')} >날짜</button>
-                  <button onClick = {() => this.handleSort('production_date')} >가격</button>
-                  <button onClick = {() => this.handleSort('price')} >이름</button>
+                  <button onClick = {() => this.handleSort('production_date')} >날짜</button>
+                  <button onClick = {() => this.handleSort('price')} >가격</button>
+                  <button onClick = {() => this.handleSort('name')} >이름</button>
                 </div>
             <div className="itemContainerWrapper">
                 <div className="itemContainer">
                     {sorted.map((goods) =>(
-                        <Link to= {this.props.match.path + "/"+ goods.name} key = {goods.id}>
-<<<<<<< HEAD
-                        <div className="item" >
-                            <img className="thumbnail" src = {goods.thumbnail}  />
-=======
-                        <div className="item" >
+                        <Link to= {this.props.match.path + "/"+ goods.name} key = {goods.id}>                        <div className="item" >
                             <div className="frameWrapper">
                                 <div className="frame">
                                     <div className="topLeft"><img src={frame}></img> </div>
