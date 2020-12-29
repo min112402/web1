@@ -44,7 +44,7 @@ class ItemDetail extends React.Component {
         return(
             <div className="itemDetailContainerWrapper">
                 <div className="itemDetailContainer">
-                    <div className="header">
+                    <div className="itemDetail">
                         <div className ="detailImage">
                             <img src={this.state.thumbnail}></img> 
                         </div>
@@ -58,12 +58,6 @@ class ItemDetail extends React.Component {
                             <span>{this.state.detail}</span>
                         </div>
                     </div>
-                    <div className = "body">
-                    </div>
-                    <div className = "footer">
-                        
-                    </div>
-
                 </div>
             </div>
         )

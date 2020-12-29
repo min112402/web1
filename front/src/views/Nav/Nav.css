@@ -5,6 +5,7 @@
     }
 
     .nav{
+      overflow: hidden;
     z-index: 2;
     background-color: black;
     font-weight: 900;
