@@ -1,6 +1,17 @@
+appdirs==1.4.4
 asgiref==3.2.10
+clipboard==0.0.4
+distlib==0.3.1
 Django==3.1.2
+django-cors-headers==3.5.0
+django-rest-framework==0.1.0
 djangorestframework==3.12.1
+filelock==3.0.12
 Pillow==7.2.0
+pyperclip==1.8.1
 pytz==2020.1
+pyvenv==0.2.2
+six==1.15.0
 sqlparse==0.3.1
+termcolor==1.1.0
+virtualenv==20.1.0
