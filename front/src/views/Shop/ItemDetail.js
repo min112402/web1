@@ -12,7 +12,7 @@ const ColoredLine = ({ color }) => (
 class ItemDetail extends React.Component {
     state = {
         name : '',
-        thumbnail : '',
+        image : '',
         detail : '',
         price : 0        
     }
@@ -46,7 +46,7 @@ class ItemDetail extends React.Component {
                 <div className="itemDetailContainer">
                     <div className="itemDetail">
                         <div className ="detailImage">
-                            <img src={this.state.thumbnail}></img> 
+                            <img src={this.state.image}></img> 
                         </div>
                         <div className = "info">
                             <h3>{this.state.name} </h3>

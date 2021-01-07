@@ -1,21 +1,16 @@
 from django.db import models
 from django.conf import settings
 from django.utils import timezone
+from imagekit.models import ImageSpecField
+from imagekit.processors import Thumbnail
 
 class Goods(models.Model):
     name = models.CharField(max_length = 100)
-    thumbnail = models.ImageField(blank =True, upload_to="goods/thumbnail")
+    image = models.ImageField(blank = True, upload_to = "goods/image")
+    thumbnail = ImageSpecField(source ='image',processors = [Thumbnail(400,400)], format = 'JPEG', options = {'quality':60})
     detail = models.TextField()
     price  = models.IntegerField()
     production_date = models.DateTimeField(auto_now_add=True)
-
-    def add_Goods(self, name = 'unnamed', thumbnail = None,  detail = '', price = None):
-        self.name = name
-        self.thumbnail = thumbnail
-        self.detail = detail
-        self.price = price
-        self.production_date = production_date
-        self.save()
 
     def __str__(self):
         return self.name

@@ -4,7 +4,7 @@ from rest_framework.response import Response
 from portfolio.models import Goods
 
 class GoodsListSerializer(serializers.ModelSerializer):
-
+    thumbnail = serializers.ImageField(read_only=True)
     class Meta:
         model = Goods
         fields = ('name', 'thumbnail', 'price', 'production_date')
@@ -30,7 +30,7 @@ class GoodsSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Goods
-        fields = "__all__"
+        fields = ('name', 'image', 'price', 'production_date')
 
 # detail view
 class GoodsView(generics.RetrieveAPIView):
