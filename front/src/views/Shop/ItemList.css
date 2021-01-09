@@ -4,39 +4,6 @@
     float: right;
 }
 
-.frame{
-    position: absolute;
-}
-
-.frame .topLeft{
-    z-index: 1;
-    position: relative;
-    top: -20px;
-    left: -20px;
-    height: 10px;
-}
-
-.frame .topRight{
-    z-index: 1;
-    position: relative;
-    top: -20px;
-    left: 380px;
-    height: 10px;
-}
-.frame .bottomLeft{
-    z-index: 1;
-    position: relative;
-    top: 350px;
-    left: -20px;
-    height: 10px;
-}
-.frame .bottomRight{
-    z-index: 1;
-    position: relative;
-    top: 350px;
-    left: 370px;
-    height: 10px;
-}
 
 
 .itemContainer .thumbnail{
@@ -72,18 +39,26 @@
 }
 
 .frameWrapper{
-    overflow: hidden;
+    position: relative;
     display: block;
     align-items: center;
+    opacity: 1;
+    transition: 0.4s ease;
 }
 
-.thumbnail:hover{
+.frameWrapper:hover{
     opacity: 0.3;
 }
 
+.frame{
+    position: absolute;
+    top: -1vw;
+    left: -1vw;
+    width: 110%;
+    margin: 0px;
+}
+
 .thumbnail{
-    opacity: 1;
-    transition: 0.4s ease;
     max-width: 100%;
     margin: 0px;
 

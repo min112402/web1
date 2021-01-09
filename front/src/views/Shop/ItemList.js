@@ -3,8 +3,9 @@ import './ItemList.css'
 import { Route,Link } from "react-router-dom"
 import {Dropdown} from 'react-bootstrap'
 import _ from 'lodash'
-import frame from "../../frame0.png"
-import frame1 from "../../frame1.png"
+import frame4 from "../../frame4.png"
+import frame2 from "../../frame2.png"
+
 class ItemList extends React.Component {
     constructor(props){
         super(props)
@@ -47,7 +48,7 @@ class ItemList extends React.Component {
                             <Link to= {this.props.match.path + "/"+ goods.name} key = {goods.id}>                        
                                 <div className="item" >
                                     <div className="frameWrapper">
-                                        <div className="frame"></div>
+                                        <img className="frame" src={frame4}/>
                                         <img className="thumbnail" src = {goods.thumbnail}  />
                                     </div>
                                     <span>
