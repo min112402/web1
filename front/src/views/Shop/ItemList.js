@@ -47,12 +47,7 @@ class ItemList extends React.Component {
                             <Link to= {this.props.match.path + "/"+ goods.name} key = {goods.id}>                        
                                 <div className="item" >
                                     <div className="frameWrapper">
-                                        <div className="frame">
-                                            <div className="topLeft"><img src={frame}></img> </div>
-                                            <div className="topRight"><img src={frame1}></img> </div>
-                                            <div className="bottomLeft"><img src={frame1}></img> </div>
-                                            <div className="bottomRight"><img src={frame}></img> </div>
-                                        </div>
+                                        <div className="frame"></div>
                                         <img className="thumbnail" src = {goods.thumbnail}  />
                                     </div>
                                     <span>

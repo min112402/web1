@@ -1,7 +1,7 @@
 
 .itemListNav{
-  display: flex;
-  float: right;
+    display: flex;
+    float: right;
 }
 
 .frame{
@@ -52,26 +52,29 @@
 }
 
 .itemContainer{
-    width: 80%;
+    width: 90vw;
     display: flex;
     flex-flow: row wrap;
+    margin: 0px;
+    padding: 0px;
 }
-
+.itemContainer a{
+    padding: 0px;
+}
 .item {
-    flex: 1 1 auto;
-    height: 600px;
+    width: 30vw;
     align-items: center;
     display: flex;
     flex-flow: column;
     transition: .5s ease;
-    margin: 30px;
+    margin: 0px;
+    padding: 2vw;
 }
 
 .frameWrapper{
-    width: 400px;
-    height: 400px;
     overflow: hidden;
     display: block;
+    align-items: center;
 }
 
 .thumbnail:hover{
@@ -82,6 +85,8 @@
     opacity: 1;
     transition: 0.4s ease;
     max-width: 100%;
+    margin: 0px;
+
 }
 
 .item span{
