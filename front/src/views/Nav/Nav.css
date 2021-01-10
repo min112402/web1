@@ -17,15 +17,16 @@
     }
 
     .logoWrapper{
-    flex: 3 1;
+      height: 100%;
+      flex: 3 1;
     }
 
     .linkWrapper{
     flex: 4 1;
     display: block;
-    margin-top: 20px;
+    margin:0px;
     align-content: center;
-    height: 140px;
+    height: 100%;
     }
 
     .imageWrapper{
@@ -34,22 +35,22 @@
 
 
     .image{
-    display: flex;
-    margin: auto;
-    float: right;
-    height: 120px;
+      margin-left: auto;
+    height: 80px;
     object-fit: contain;
     }
 
 
     .logo{
+      margin-bottom: auto;
     height: 60px;
-    margin-bottom: 10px;
-    float: left;
     object-fit: contain;
     }
 
     ul{
+      margin:0px;
+      padding:0px;
+      height: 100%;
     max-width: 1600px;
     display: flex;
     flex-direction: row;
@@ -66,6 +67,22 @@
     font-family: Arial, Helvetica, sans-serif;
     }
 
+    .nav a{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height:100%;
+    }
+    .nav .logoWrapper a{
+      display: flex;
+      justify-content: left;
+      height:100%;
+    }
+    .nav .imageWrapper a{
+      display: flex;
+      align-items: center;
+      height:100%;
+    }
     .nav a, .nav a:visited {
     color : white;
     text-decoration: none;
