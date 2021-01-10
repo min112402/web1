@@ -12,6 +12,7 @@ ReactDOM.render(
   document.getElementById('root')
 );
 
+//resizeTimer -- 창 크기가 변할때 transtion효과 때문에 레이아웃이 깨지는 것을 방지
 let resizeTimer;
 window.addEventListener("resize", () => {
   document.body.classList.add("resize-animation-stopper");

@@ -2,7 +2,7 @@ import React from 'react'
 import {ParallaxProvider, Parallax} from 'react-scroll-parallax'
 import "./LandingPage.css"
 import landingPageLogo from "../../landingPageLogo.png"
-import img1 from "../../img2.png"
+import background from "../../background.jpeg"
 
 class LandingPage extends React.Component {
     
@@ -11,14 +11,12 @@ class LandingPage extends React.Component {
         return (
             <div class="landingPage">
                 <ParallaxProvider>
-                    <h1>Home</h1> 
-                    <Parallax y={[-80,100]}>
-                        <div class="logoWrapper">
-                            <img class="landingPageLogo" src={landingPageLogo} alt=""></img>
-                        </div>
-                    </Parallax>
+                    <div class="backgroundWrapper">
+                        <img class="background" src={background} alt=""></img>
+                    </div>          
                     <Parallax y={[0,0]}>
-                    <img class="landingPageLogo" src={img1} alt=""></img>
+                        <div class="LogoWrapper">
+                        </div>
                     </Parallax>
                 </ParallaxProvider>
             </div>
