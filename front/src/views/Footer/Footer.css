@@ -1,0 +1,32 @@
+
+.footer{
+    width: 100%;
+    height: 200px;
+    background-color: rgb(238, 238, 238);
+    justify-content: center;
+    display: flex ;
+}
+
+.footerContent{
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+}
+.footerContent a{
+    padding-left: 0px;
+}
+.footerLogo{
+    width: 300px;
+}
+
+
+
+hr{
+    border: 0;
+  clear:both;
+  display:block;
+  width: 96%;               
+  background-color:rgb(59, 59, 59);
+  height: 1px;
+  margin: 0;
+}
