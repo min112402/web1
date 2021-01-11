@@ -12,12 +12,12 @@
     justify-content: center;
 }
 
-hr{
+.info hr{
     border: 0;
   clear:both;
   display:block;
   width: 96%;               
-  background-color:#FFFF00;
+  background-color:rgb(87, 87, 87);
   height: 1px;
   margin: 0;
 }

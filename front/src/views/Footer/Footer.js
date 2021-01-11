@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import './Footer.css'
 import { Link } from "react-router-dom"
-import logo from "../../logo.png"
+import logo from "../../logo-fit.png"
 const ColoredLine = ({ color }) => (
     <hr
       style={{
@@ -19,6 +19,8 @@ export default class Footer extends Component {
                     <span>Instagram : @kwon_thefact0ry</span>
                     <span>e-mail : naxya0517@gmail.com</span>
                     <ColoredLine color="gray"></ColoredLine>
+                    <span style={{marginLeft:"auto"}}>COPYRIGHT 2021. KWON,theFACTORY</span>
+                    <span style={{marginLeft:"auto"}}>ALL RIGHTS RESERVED.</span>
                 </div>
             </div>
         )

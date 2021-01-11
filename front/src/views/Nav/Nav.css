@@ -43,8 +43,7 @@
 
     .logo{
       margin-bottom: auto;
-      height: 60px;
-      object-fit: contain;
+      max-height: 60px;
     }
 
     ul{
