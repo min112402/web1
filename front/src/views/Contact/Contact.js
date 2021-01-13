@@ -10,7 +10,7 @@ export default function Contact() {
                     <img className="contactBackground" src={contactBackground} alt=""></img>
                     <div>
                         <h2>Contact</h2>
-                        Instagram : <a href="https://www.instagram.com/kwon_thefact0ry/">@kwon_thefact0ry</a>
+                        Instagram : <a href="https://www.instagram.com/kwon_thefact0ry/" target="_blank" rel="noopener noreferrer">@kwon_thefact0ry</a>
                         <br></br>
                         e-mail : naxya0517@gmail.com
                     </div>
