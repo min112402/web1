@@ -55,9 +55,9 @@ class ItemList extends React.Component {
                                         <img className="frame" src={frame4}/>
                                         <img className="thumbnail" src = {goods.thumbnail}  />
                                     </div>
-                                    <div className="info">
+                                    <span className="info">
                                         {goods.name}
-                                    </div>
+                                    </span>
                                     <span>
                                         {this.addComma(goods.price)} &#x20a9;
                                     </span>

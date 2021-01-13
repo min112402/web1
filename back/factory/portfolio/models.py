@@ -4,6 +4,8 @@ from django.utils import timezone
 from imagekit.models import ImageSpecField
 from imagekit.processors import Thumbnail
 
+store_link = "https://smartstore.naver.com/kwonthefactory"
+
 class Goods(models.Model):
     name = models.CharField(max_length = 100)
     image = models.ImageField(blank = True, upload_to = "goods/image")
@@ -11,7 +13,7 @@ class Goods(models.Model):
     detail = models.TextField()
     price  = models.IntegerField()
     production_date = models.DateTimeField(auto_now_add=True)
-
+    link = models.CharField(max_length=200, default = store_link ,blank = True, null = False)
     def __str__(self):
         return self.name
 
