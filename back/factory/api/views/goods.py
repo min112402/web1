@@ -30,7 +30,7 @@ class GoodsSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Goods
-        fields = ('name', 'image', 'price', 'production_date')
+        fields = ('name', 'image', 'price', 'production_date','link')
 
 # detail view
 class GoodsView(generics.RetrieveAPIView):

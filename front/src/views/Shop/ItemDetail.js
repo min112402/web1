@@ -14,7 +14,8 @@ class ItemDetail extends React.Component {
         name : '',
         image : '',
         detail : '',
-        price : 0        
+        price : 0,
+        link : ''        
     }
 
     constructor(props){
@@ -53,8 +54,10 @@ class ItemDetail extends React.Component {
                             <ColoredLine color="gray"/>
                             <span>price: {this.state.price}  </span>
                             <ColoredLine color="gray"/>
-                            <span>link <a href="https://smartstore.naver.com/kwonthefactory">스토어</a>  </span>
+                            <br/>
+                            <a className="button" href={this.state.link}>BUY</a> 
                             <ColoredLine color="gray"/>
+                            <br/>
                             <span>{this.state.detail}</span>
                         </div>
                     </div>
