@@ -1,0 +1,88 @@
+
+.itemListNav{
+    display: flex;
+    float: right;
+}
+
+
+
+.itemContainer .thumbnail{
+    display: block;
+    object-fit: cover;
+}
+.itemListNav button{
+  font-size: 12px;
+  float: right;
+  border: 1px solid gray;
+  background-color: rgba(0,0,0,0);
+  color: gray; padding: 5px;
+}
+.itemContainerWrapper{
+    margin-top: 50px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.itemContainer{
+    font-family: helvetica;
+    font-weight: bold;
+    width: 90vw;
+    display: flex;
+    flex-flow: row wrap;
+    margin: 0px;
+    padding: 0px;
+}
+.itemContainer a{
+    padding: 0px;
+}
+.itemContainer a:hover{
+  color: black;
+  text-decoration-line: black;
+  text-underline-position: under;
+  opacity: 0.7;
+}
+.item {
+    width: 30vw;
+    align-items: center;
+    display: flex;
+    flex-flow: column;
+    transition: .5s ease;
+    margin: 0px;
+    padding: 2vw;
+}
+
+.frameWrapper{
+    position: relative;
+    display: block;
+    align-items: center;
+    opacity: 1;
+    transition: 0.4s ease;
+}
+
+.frameWrapper:hover{
+    opacity: 0.5;
+    text-decoration: none;
+}
+
+.frame{
+    position: absolute;
+    top: -1vw;
+    left: -1vw;
+    width: 110%;
+    margin: 0px;
+}
+
+.thumbnail{
+    max-width: 100%;
+    margin: 0px;
+
+}
+
+.item span{
+    flex: 1 1 auto;
+    font-size: 20px;
+    height: 30;
+    color: black;
+    font-family: Arial, Helvetica, sans-serif;
+}

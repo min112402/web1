@@ -4,13 +4,17 @@
     float: right;
 }
 
-
-
 .itemContainer .thumbnail{
     display: block;
     object-fit: cover;
 }
-
+.itemListNav button{
+  font-size: 12px;
+  float: right;
+  border: 1px solid gray;
+  background-color: rgba(0,0,0,0);
+  color: gray; padding: 5px;
+}
 .itemContainerWrapper{
     margin-top: 50px;
     width: 100%;
@@ -19,6 +23,8 @@
 }
 
 .itemContainer{
+    font-family: helvetica;
+    font-weight: bold;
     width: 90vw;
     display: flex;
     flex-flow: row wrap;
@@ -27,6 +33,12 @@
 }
 .itemContainer a{
     padding: 0px;
+}
+.itemContainer a:hover{
+  color: black;
+  text-decoration-line: black;
+  text-underline-position: under;
+  opacity: 0.7;
 }
 .item {
     width: 30vw;
@@ -47,7 +59,8 @@
 }
 
 .frameWrapper:hover{
-    opacity: 0.3;
+    opacity: 0.5;
+    text-decoration: none;
 }
 
 .frame{
@@ -70,4 +83,27 @@
     height: 30;
     color: black;
     font-family: Arial, Helvetica, sans-serif;
+}
+
+.info{
+  text-overflow: ellipsis;
+  white-space : nowrap;
+  overflow: hidden;
+  display: inline-block;
+  max-width: 60%;
+  font-size: 20px;
+  font-family: Arial, Helvetica;
+  color: black;
+}
+
+
+@media(max-width:1200px){
+  .info{
+    max-width: 80%;
+    font-size: 15px;
+    font-family: Arial, Helvetica;
+    color: black;
+  }
+  .item span{
+    font-size: 15px;}
 }
