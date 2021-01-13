@@ -29,7 +29,11 @@ class ItemList extends React.Component {
 			           sortColumn.order = 'asc';
 		           }
 		      this.setState({ sortColumn });
-	 };
+	 }
+   addComma(num) {
+     var regexp = /\B(?=(\d{3})+(?!\d))/g;
+     return num.toString().replace(regexp, ',');
+   };
 
 
     render(){
@@ -38,24 +42,24 @@ class ItemList extends React.Component {
         return(
             <div>
                 <div className="itemListNav">
-                  <button onClick = {() => this.handleSort('production_date')} >날짜</button>
-                  <button onClick = {() => this.handleSort('price')} >가격</button>
-                  <button onClick = {() => this.handleSort('name')} >이름</button>
+                  <button onClick = {() => this.handleSort('production_date')} >date</button>
+                  <button onClick = {() => this.handleSort('price')} >price</button>
+                  <button onClick = {() => this.handleSort('name')} >name</button>
                 </div>
                 <div className="itemContainerWrapper">
                     <div className="itemContainer">
                         {sorted.map((goods) =>(
-                            <Link to= {this.props.match.path + "/"+ goods.name} key = {goods.id}>                        
+                            <Link to= {this.props.match.path + "/"+ goods.name} key = {goods.id}>
                                 <div className="item" >
                                     <div className="frameWrapper">
                                         <img className="frame" src={frame4}/>
                                         <img className="thumbnail" src = {goods.thumbnail}  />
                                     </div>
-                                    <span>
+                                    <div className="info">
                                         {goods.name}
-                                    </span>
+                                    </div>
                                     <span>
-                                        {goods.price}
+                                        {this.addComma(goods.price)} &#x20a9;
                                     </span>
                                 </div>
                             </Link>

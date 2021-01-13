@@ -7,16 +7,16 @@ export default function Contact() {
         <div>
             <div className="body">
                 <div className="contactContainer">
-                    <img className="contactBackground" src={contactBackground} alt=""></img>
+                    <a href="https://www.instagram.com/kwon_thefact0ry/" target="_blank">
+                    <img className="contactBackground" src={contactBackground} alt=""></img></a>
                     <div>
                         <h2>Contact</h2>
-                        Instagram : <a href="https://www.instagram.com/kwon_thefact0ry/">@kwon_thefact0ry</a>
+                        Instagram : <a href="https://www.instagram.com/kwon_thefact0ry/" target="_blank">@kwon_thefact0ry</a>
                         <br></br>
                         e-mail : naxya0517@gmail.com
                     </div>
                 </div>
             </div>
-            <Footer/>
         </div>
     )
 }
