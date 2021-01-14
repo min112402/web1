@@ -2,7 +2,7 @@ from rest_framework import generics, serializers
 from rest_framework.response import Response
 
 from portfolio.models import Goods
-
+from factory import settings
 class GoodsListSerializer(serializers.ModelSerializer):
     thumbnail = serializers.ImageField(read_only=True)
     class Meta:
@@ -27,10 +27,15 @@ class GoodsListView(generics.ListAPIView):
         return Response(serializer.data)
 
 class GoodsSerializer(serializers.ModelSerializer):
+    image = serializers.SerializerMethodField()
+    def get_image(self, obj):
+        return f'{settings.MEDIA_URL}{obj.image}'
+
 
     class Meta:
         model = Goods
         fields = ('name', 'image', 'price', 'production_date','link')
+
 
 # detail view
 class GoodsView(generics.RetrieveAPIView):
