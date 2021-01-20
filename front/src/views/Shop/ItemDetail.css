@@ -3,7 +3,6 @@
 }
 .itemDetailContainer img{
     max-width: 100%;
-    max-height: 600px;
 }
 .itemDetailContainerWrapper{
     width: 100%;
@@ -27,6 +26,7 @@
     display: flex;
     max-width: 60%;
     flex-direction: column;
+    text-align: center;
 }
 
 .itemDetail{
@@ -68,4 +68,10 @@
 .button:hover, .button:visited:hover {
     text-decoration: none;
     opacity: 0.7;
+}
+
+@media ( max-width:950px ) {
+    .itemDetailContainer{
+        width: 100%;
+    }
 }

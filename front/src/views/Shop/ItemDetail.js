@@ -1,5 +1,6 @@
 import React from 'react'
 import './ItemDetail.css'
+import _ from 'lodash'
 
 const ColoredLine = ({ color }) => (
     <hr
@@ -15,7 +16,8 @@ class ItemDetail extends React.Component {
         image : '',
         detail : '',
         price : 0,
-        link : ''        
+        link : '',
+        images:[],
     }
 
     constructor(props){
@@ -42,7 +44,9 @@ class ItemDetail extends React.Component {
 
 
     render(){
-        return(
+        const details = _.map(this.state.images,(detail=> <img src = {detail.image}/>))
+        console.log(details)
+        return(            
             <div className="itemDetailContainerWrapper">
                 <div className="itemDetailContainer">
                     <div className="itemDetail">
@@ -61,6 +65,8 @@ class ItemDetail extends React.Component {
                             <span>{this.state.detail}</span>
                         </div>
                     </div>
+                    <div>{details}</div>
+
                 </div>
             </div>
         )
