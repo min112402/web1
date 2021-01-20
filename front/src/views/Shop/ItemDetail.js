@@ -32,7 +32,7 @@ class ItemDetail extends React.Component {
         console.log(name)
         console.log(typeof(name))
         
-        fetch("/api/goods/"+name)
+        fetch("/api/item/"+name)
             .then(response =>response.json())
             .then(itemDetail => {
                 console.log(itemDetail)

@@ -1,5 +1,13 @@
 from django.contrib import admin
-from .models import Goods,Portfolio
+from .models import Item,ItemImages,Portfolio
 
-admin.site.register(Goods)
+class ItemImagesInline(admin.TabularInline):
+    model = ItemImages
+
+class ItemAdmin(admin.ModelAdmin):
+    inlines = [
+        ItemImagesInline,
+    ]
+
+admin.site.register(Item, ItemAdmin)
 admin.site.register(Portfolio)

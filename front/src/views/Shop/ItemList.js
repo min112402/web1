@@ -15,7 +15,7 @@ class ItemList extends React.Component {
         }
     }
     componentDidMount() {
-        fetch("/api/goods/")
+        fetch("/api/item/")
             .then(response =>response.json())
             .then(goodsList => {
                 this.setState({goods: goodsList})
