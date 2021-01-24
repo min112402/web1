@@ -1,15 +1,20 @@
+
 .backgroundWrapper{
     width: 100%;
     position: fixed;
 }
 .background{
-    overflow: scroll;
+    position: absolute;
     width: 100%;
-    object-fit: contain;
 }
-.logoWrapper{
+.background2{
+    width: 100%;
+}
+.manWrapper{
+
 }
 
-.landingPageLogo{
-    width: 80%;
+.man1{
+    position: fixed;
+    width: 100%;
 }
