@@ -1,7 +1,8 @@
-from rest_framework import generics, serializers
+from rest_framework import generics, serializers, viewsets
 from rest_framework.response import Response
 
-from portfolio.models import Portfolio
+from portfolio.models import Portfolio, PortfolioImages 
+from factory import settings
 
 class PortfolioListSerializer(serializers.ModelSerializer):
 
@@ -27,19 +28,36 @@ class PortfolioListView(generics.ListAPIView):
         return Response(serializer.data)
 
 
-class PortfolioSerializer(serializers.ModelSerializer):
 
+# detail images
+class PortfolioImagesSerializer(serializers.ModelSerializer):
+    image = serializers.SerializerMethodField() #디테일 이미지
+    def get_image(self, obj):
+        return f'{settings.MEDIA_URL}{obj.image}'
+    class Meta:
+        model = PortfolioImages
+        fields = ('portfolio', 'image')
+
+class ItemImagesView(viewsets.ModelViewSet):
+    queryset = PortfolioImages.objects.all()
+    serializer_class = PortfolioImagesSerializer
+
+
+# Portfolio - detail view
+class PortfolioSerializer(serializers.ModelSerializer):
+    image = serializers.SerializerMethodField() #대표 이미지
+    images = PortfolioImagesSerializer(many=True, read_only = True) # 설명 
+    
+    def get_image(self, obj):
+        return f'{settings.MEDIA_URL}{obj.image}'
+    
     class Meta:
         model = Portfolio
-        fields = "__all__"
+        fields = ('title', 'image', 'detail', 'production_date', 'link', 'images')
 
 
 class PortfolioView(generics.RetrieveAPIView):
     queryset = Portfolio.objects.all()
-    serializer_class = PortfolioListSerializer
-
-    def get_object(self):
-        queryset = self.get_queryset()
-        portfolio_title = self.kwargs['portfolio_title']
-        return queryset.get(title=portfolio_title)
-
+    serializer_class = PortfolioSerializer
+    lookup_field = 'title'
+    lookup_url_kwarg = 'portfolio_title'

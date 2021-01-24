@@ -3,3 +3,4 @@ test_data
 .cache
 __pycache__
 *node_modules/*
+settings.py

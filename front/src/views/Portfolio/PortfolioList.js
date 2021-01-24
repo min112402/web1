@@ -1,12 +1,12 @@
 import React from 'react'
-import './ItemList.css'
+import './PortfolioList.css'
 import { Route,Link } from "react-router-dom"
 import {Dropdown} from 'react-bootstrap'
 import _ from 'lodash'
 import frame4 from "../../frame4.png"
 import frame2 from "../../frame2.png"
 
-class ItemList extends React.Component {
+class PortfolioList extends React.Component {
     constructor(props){
         super(props)
         this.state = {
@@ -15,7 +15,7 @@ class ItemList extends React.Component {
         }
     }
     componentDidMount() {
-        fetch("/api/goods/")
+        fetch("/api/portfolio/")
             .then(response =>response.json())
             .then(goodsList => {
                 this.setState({goods: goodsList})
@@ -30,10 +30,6 @@ class ItemList extends React.Component {
 		           }
 		      this.setState({ sortColumn });
 	 }
-   addComma(num) {
-     var regexp = /\B(?=(\d{3})+(?!\d))/g;
-     return num.toString().replace(regexp, ',');
-   };
 
 
     render(){
@@ -48,19 +44,16 @@ class ItemList extends React.Component {
                 </div>
                 <div className="itemContainerWrapper">
                     <div className="itemContainer">
-                        {sorted.map((goods) =>(
-                            <Link to= {this.props.match.path + "/"+ goods.name} key = {goods.id}>
+                        {sorted.map((portfolio) =>(
+                            <Link to= {this.props.match.path + "/"+ portfolio.title} key = {portfolio.id}>
                                 <div className="item" >
                                     <div className="frameWrapper">
-                                        <img className="frame" src={frame4}/>
-                                        <img className="thumbnail" src = {goods.thumbnail}  />
+                                        <img className="thumbnail" src = {portfolio.thumbnail}  />
                                     </div>
-                                    <span className="info">
-                                        {goods.name}
-                                    </span>
-                                    <span>
-                                        {this.addComma(goods.price)} &#x20a9;
-                                    </span>
+                                    <div className="info">
+                                        {portfolio.title}
+                                    </div>
+                                    
                                 </div>
                             </Link>
                         ))}
@@ -71,4 +64,4 @@ class ItemList extends React.Component {
     }
 }
 
-export default ItemList
+export default PortfolioList

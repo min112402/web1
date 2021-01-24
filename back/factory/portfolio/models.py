@@ -48,22 +48,7 @@ def cropped_thumbnail(img, size):
     return img.resize(target.size, Image.ANTIALIAS)
 
 
-class Item(models.Model):
-    name = models.CharField(max_length = 100)
-    image = models.ImageField(blank = True, upload_to = "goods/image")
-    thumbnail = models.ImageField(blank = False, upload_to = "goods/thumbnail")
-    detail = models.TextField()
-    price  = models.IntegerField()
-    production_date = models.DateTimeField(auto_now_add=True)
-    link = models.CharField(max_length=200, default = default_store_link ,blank = True, null = False)
-    def __str__(self):
-        return self.name
-    def save(self, *args, **kargs):
-        if not self.make_thumbnail():
-            raise  Exception('Could not create thumbnail - is the file type valid?')
-        super(Item, self).save(*args, **kargs)
-
-    def make_thumbnail(self):
+def make_thumbnail(self):
         THUMB_SIZE = (400,400)
         image = Image.open(self.thumbnail) 
         image = cropped_thumbnail(image,THUMB_SIZE)
@@ -92,6 +77,23 @@ class Item(models.Model):
         temp_thumb.close()
         return True
 
+class Item(models.Model):
+    name = models.CharField(max_length = 100)
+    image = models.ImageField(blank = True, upload_to = "goods/image")
+    thumbnail = models.ImageField(blank = False, upload_to = "goods/thumbnail")
+    detail = models.TextField()
+    price  = models.IntegerField()
+    production_date = models.DateTimeField(auto_now_add=True)
+    link = models.CharField(max_length=200, default = default_store_link ,blank = True, null = False)
+
+    def __str__(self):
+        return self.name
+    
+    def save(self, *args, **kargs):
+        if not make_thumbnail():
+            raise  Exception('Could not create thumbnail - is the file type valid?')
+        super(Item, self).save(*args, **kargs)
+
 class ItemImages(models.Model):
     item = models.ForeignKey('Item',related_name = 'images', blank=False, on_delete = models.CASCADE)
     image = models.ImageField(upload_to='item/detail-image')
@@ -99,15 +101,20 @@ class ItemImages(models.Model):
 class Portfolio(models.Model):
     title = models.CharField(max_length = 100)
     thumbnail = models.ImageField(blank =True)
+    image = models.ImageField(blank = True, upload_to = "portfolio/image")
     detail = models.TextField()
     production_date = models.DateField()
+    link = models.CharField(max_length=200, default = default_store_link ,blank = True, null = False)
 
-    def add_Goods(self, title = 'untitled', thumbnail = None,  detail = '', production_date = None):
-        self.title = title
-        self.thumbnail = thumbnail
-        self.detail = detail
-        self.production_date = production_date
-        self.save()
-
+    
     def __str__(self):
         return self.title
+    def save(self, *args, **kargs):
+        if not make_thumbnail(self):
+            raise  Exception('Could not create thumbnail - is the file type valid?')
+        super(Portfolio, self).save(*args, **kargs)
+
+class PortfolioImages(models.Model):
+    portfolio = models.ForeignKey('Portfolio',related_name = 'images', blank=False, on_delete = models.CASCADE)
+    image = models.ImageField(upload_to='portfolio/detail-image')
+
