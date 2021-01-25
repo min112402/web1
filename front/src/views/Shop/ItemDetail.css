@@ -82,7 +82,14 @@
         flex-direction: column;
         align-items: center;
     }
+}
+
+@media screen and ( max-width:450px ) {
+    .itemDetail{
+        flex-direction: column;
+        align-items: center;
+    }
     .itemDetail .detailImage{
-        width: 100%;
+        width: 80%;
     }
 }
