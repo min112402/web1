@@ -54,7 +54,7 @@ class ItemDetail extends React.Component {
                             <img src={this.state.image}></img> 
                         </div>
                         <div className = "info">
-                            <h3>{this.state.name} </h3>
+                            <span>{this.state.name} </span>
                             <ColoredLine color="gray"/>
                             <span>price: {this.state.price}  </span>
                             <ColoredLine color="gray"/>

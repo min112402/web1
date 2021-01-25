@@ -1,5 +1,5 @@
 import React from 'react'
-import './PortfolioDetail.css'
+import '../Shop/ItemDetail.css'
 import _ from 'lodash'
 
 const ColoredLine = ({ color }) => (
@@ -52,7 +52,7 @@ class PortfolioDetail extends React.Component {
                             <img src={this.state.image}></img> 
                         </div>
                         <div className = "info">
-                            <h3>{this.state.title} </h3>
+                            <span>{this.state.title} </span>
                             <ColoredLine color="gray"/>
                             <span>{this.state.detail}</span>
                             <ColoredLine color="gray"/>

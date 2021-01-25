@@ -100,7 +100,7 @@
         float: right;
         display: block;
         padding : 0 !important;
-        height: 40px !important;
+        height: 30px !important;
       }
       .linkWrapper a.icon:hover{
         color:rgb(141, 141, 141);
@@ -108,7 +108,7 @@
       .linkWrapper a.icon i {
         float: right;
         display: block;
-        font-size: 40px;
+        font-size: 30px;
       }
       .linkWrapper.responsive{
         position: relative;
@@ -117,7 +117,7 @@
       .linkWrapper a.icon{
         position: absolute;
         right: 10px;
-        top: 10px;
+        top: 15px;
       }
       .linkWrapper.responsive a {
         background-color: rgb(31, 31, 31);

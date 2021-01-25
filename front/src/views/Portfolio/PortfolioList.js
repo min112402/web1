@@ -39,8 +39,7 @@ class PortfolioList extends React.Component {
             <div>
                 <div className="itemListNav">
                   <button onClick = {() => this.handleSort('production_date')} >date</button>
-                  <button onClick = {() => this.handleSort('price')} >price</button>
-                  <button onClick = {() => this.handleSort('name')} >name</button>
+                  <button onClick = {() => this.handleSort('title')} >title</button>
                 </div>
                 <div className="itemContainerWrapper">
                     <div className="itemContainer">

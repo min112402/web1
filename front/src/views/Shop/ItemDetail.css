@@ -13,18 +13,17 @@
 
 .info hr{
     border: 0;
-  clear:both;
-  display:block;
-  width: 96%;               
-  background-color:rgb(87, 87, 87);
-  height: 1px;
-  margin: 0;
+    clear:both;
+    display:block;
+    width: 96%;               
+    background-color:rgb(87, 87, 87);
+    height: 1px;
+    margin: 0;
 }
 
 .itemDetailContainer{
-    flex-grow: 1;
     display: flex;
-    max-width: 60%;
+    width: 60%;
     flex-direction: column;
     text-align: center;
 }
@@ -43,7 +42,7 @@
     display: flex;
     flex-direction: column;
 }
-.itemDetail .info span, h3 {
+.itemDetail .info span {
     margin: 0;
     padding: 0px;
 }
@@ -70,8 +69,20 @@
     opacity: 0.7;
 }
 
-@media ( max-width:950px ) {
+@media screen and ( max-width:950px ) {
     .itemDetailContainer{
+        width: 100%;
+    }
+    .itemDetail .info{
+        width: 100%;
+        padding: 0;
+        font-size: 13px;
+    }
+    .itemDetail{
+        flex-direction: column;
+        align-items: center;
+    }
+    .itemDetail .detailImage{
         width: 100%;
     }
 }
