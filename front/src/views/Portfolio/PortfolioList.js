@@ -1,5 +1,5 @@
 import React from 'react'
-import './PortfolioList.css'
+import '../Shop/ItemList.css'
 import { Route,Link } from "react-router-dom"
 import {Dropdown} from 'react-bootstrap'
 import _ from 'lodash'
