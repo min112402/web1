@@ -5,7 +5,6 @@
     }
 
     .nav{
-      overflow: hidden;
       z-index: 2;
       background-color: black;
       font-weight: 900;
@@ -23,9 +22,12 @@
 
     .linkWrapper{
       flex: 4 1;
-      display: block;
+      display: flex;
       margin:0px;
+      padding:0px;
+      flex-direction: row;
       align-content: center;
+      align-items: center;
       height: 100%;
     }
 
@@ -44,43 +46,21 @@
       max-height: 40px;
     }
 
-    @media (max-width: 1400px) {
-        .logo{
-          max-width: 300px;
-          margin: 0;
-        }
-    }
 
-    ul{
-      margin:0px;
-      padding:0px;
-      height: 100%;
-      max-width: 1600px;
-      display: flex;
-      flex-direction: row;
-      flex-grow: 1;
-      list-style-type: none;
-      align-items: center;
-    }
-
-    li{
-      flex: 1 1 auto;
-      text-decoration: none;
-      padding : 30px;
-      font-size: 30px;
-      font-family: Arial, Helvetica, sans-serif;
-    }
-
-    .nav a{
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height:100%;
-    }
     .nav .logoWrapper a{
       display: flex;
       justify-content: left;
+      align-items: center;
       height:100%;
+    }
+    .nav .linkWrapper a{
+      flex: 1 1 auto;
+      text-decoration: none;
+      font-size: 30px;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+    .nav .linkWrapper a:first-child{
+      display: none;
     }
     .nav .imageWrapper a{
       display: flex;
@@ -91,15 +71,64 @@
       color : white;
       text-decoration: none;
     }
-
+    
     .nav a:hover, .nav a:visited:hover {
         color : white;
         text-decoration: none;
     }
-
-    @media ( max-width:1200px ) {
-        .imageWrapper { display: none; }
+    .linkWrapper .icon {
+      display: none;
     }
-    @media ( max-width:950px ) {
-        .linkWrapper { display: none; }
+
+    @media (max-width: 1400px) {
+      .logo{
+        max-width: 300px;
+        margin: 0;
+      }
+  }
+    @media screen and ( max-width:950px ) {
+      .nav{display: block;}
+      .imageWrapper { display: none; }
+      .logoWrapper {display: none;}
+      .linkWrapper a:not(:first-child) { display: none; }
+      .linkWrapper a:first-child { 
+        display: block !important; 
+        text-align: center;
+      }
+
+      .linkWrapper a.icon {
+        float: right;
+        display: block;
+        padding : 0 !important;
+        height: 40px !important;
+      }
+      .linkWrapper a.icon:hover{
+        color:rgb(141, 141, 141);
+      }
+      .linkWrapper a.icon i {
+        float: right;
+        display: block;
+        font-size: 40px;
+      }
+      .linkWrapper.responsive{
+        position: relative;
+        display: block;
+      }
+      .linkWrapper a.icon{
+        position: absolute;
+        right: 10px;
+        top: 10px;
+      }
+      .linkWrapper.responsive a {
+        background-color: rgb(31, 31, 31);
+        height: 60px;
+        padding-top: 13px;
+        float: none;
+        display: block;
+        text-align: center;
+        font-size: 20px;
+      }
+      .linkWrapper.responsive a:not(:first-child,:last-child):hover {
+        background-color:rgb(173, 173, 173) ;
+      }
     }
