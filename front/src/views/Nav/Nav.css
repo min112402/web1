@@ -33,11 +33,16 @@
 
     .imageWrapper{
       flex: 3 1;
+      margin:0px;
+      padding:0px;
+      align-content: center;
+      align-items: center;
+      height: 100%;
     }
 
     .image{
       margin-left: auto;
-      height: 80px;
+      height: 100%;
       object-fit: contain;
     }
 
@@ -67,25 +72,26 @@
       align-items: center;
       height:100%;
     }
-    .nav a, .nav a:visited {
+    .nav a, .nav a:visited .nav a:hover, .nav a:visited:hover {
       color : white;
       text-decoration: none;
+      text-align: center;
+      padding: 10px;
     }
     
-    .nav a:hover, .nav a:visited:hover {
-        color : white;
-        text-decoration: none;
-    }
     .linkWrapper .icon {
       display: none;
     }
 
-    @media (max-width: 1400px) {
+    @media (max-width: 1200px) {
       .logo{
         max-width: 300px;
         margin: 0;
       }
-  }
+      .nav a {
+        font-size: 20px;
+      }
+    }
     @media screen and ( max-width:950px ) {
       .nav{display: block;}
       .imageWrapper { display: none; }

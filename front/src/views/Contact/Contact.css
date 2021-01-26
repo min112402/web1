@@ -21,8 +21,8 @@
 }
 
 .contactBackground{
-    width: 100%;
-    height: 300px;
+    width: 100vw;
+    height: 30vw;
     object-fit: cover;
     object-position: 0% 40%;
 }

@@ -19,8 +19,8 @@ export default class Footer extends Component {
                     <span>Instagram : @kwon_thefact0ry</span>
                     <span>e-mail : naxya0517@gmail.com</span>
                     <ColoredLine color="gray"></ColoredLine>
-                    <span style={{marginLeft:"auto"}}>COPYRIGHT 2021. KWON,theFACTORY</span>
-                    <span style={{marginLeft:"auto"}}>ALL RIGHTS RESERVED.</span>
+                    <span className="copyright">COPYRIGHT 2021. KWON,theFACTORY</span>
+                    <span className="copyright">ALL RIGHTS RESERVED.</span>
                 </div>
             </div>
         )

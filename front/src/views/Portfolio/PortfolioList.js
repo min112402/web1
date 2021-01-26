@@ -1,45 +1,42 @@
 import React from 'react'
 import './PortfolioList.css'
-import { Route,Link } from "react-router-dom"
-import {Dropdown} from 'react-bootstrap'
+import {Link}  from "react-router-dom"
 import _ from 'lodash'
-import frame4 from "../../frame4.png"
-import frame2 from "../../frame2.png"
 
 class PortfolioList extends React.Component {
     constructor(props){
         super(props)
         this.state = {
-            goods : [],
+            items : [],
             sortColumn : { path : 'production_date', order : 'asc'}
         }
     }
     componentDidMount() {
         fetch("/api/portfolio/")
             .then(response =>response.json())
-            .then(goodsList => {
-                this.setState({goods: goodsList})
+            .then(itemList => {
+                this.setState({items: itemList})
             })
     }
     handleSort(path) {
-		     const sortColumn = { ...this.state.sortColumn };
-		      if (sortColumn.path === path) sortColumn.order = sortColumn.order === 'asc' ? 'desc' : 'asc';
-		      else {
-			           sortColumn.path = path;
-			           sortColumn.order = 'asc';
-		           }
-		      this.setState({ sortColumn });
-	 }
+        const sortColumn = { ...this.state.sortColumn };
+        if (sortColumn.path === path) sortColumn.order = sortColumn.order === 'asc' ? 'desc' : 'asc';
+		else {
+            sortColumn.path = path;
+            sortColumn.order = 'asc';
+		}
+        this.setState({ sortColumn });
+	}
 
 
     render(){
-        const { sortColumn, goods } = this.state;
-        const sorted = _.orderBy(goods, [sortColumn.path], [sortColumn.order]);
+        const { sortColumn, items } = this.state;
+        const sorted = _.orderBy(items, [sortColumn.path], [sortColumn.order]);
         return(
             <div>
                 <div className="itemListNav">
-                  <button onClick = {() => this.handleSort('production_date')} >date</button>
-                  <button onClick = {() => this.handleSort('title')} >title</button>
+                    <button onClick = {() => this.handleSort('production_date')} >date</button>
+                    <button onClick = {() => this.handleSort('title')} >title</button>
                 </div>
                 <div className="itemContainerWrapper">
                     <div className="itemContainer">

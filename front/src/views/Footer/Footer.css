@@ -21,14 +21,25 @@
     width: 300px;
 }
 
-
+.copyright{
+    margin-left: auto;
+}
 
 hr{
     border: 0;
-  clear:both;
-  display:block;
-  width: 100%;               
-  background-color:rgb(59, 59, 59);
-  height: 1px;
-  margin: 0;
+    clear:both;
+    display:block;
+    width: 100%;               
+    background-color:rgb(59, 59, 59);
+    height: 1px;
+    margin: 0;
+}
+
+@media screen and ( max-width:950px){
+    .footerLogo{
+        width: 225px;
+    }
+    .footerContent{
+        font-size: 12px;
+    }
 }
