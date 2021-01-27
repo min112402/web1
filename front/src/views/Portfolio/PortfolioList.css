@@ -2,6 +2,7 @@
 .itemListNav{
     display: flex;
     float: right;
+    padding-top: 10px;
 }
 
 .itemContainer .thumbnail{
@@ -35,10 +36,10 @@
     padding: 0px;
 }
 .itemContainer a:hover{
-  color: black;
-  text-decoration-line: black;
-  text-underline-position: under;
-  opacity: 0.7;
+    color: black;
+    text-decoration-line: black;
+    text-underline-position: under;
+    opacity: 0.7;
 }
 .item {
     width: 30vw;

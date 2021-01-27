@@ -27,8 +27,6 @@ class PortfolioList extends React.Component {
 		}
         this.setState({ sortColumn });
 	}
-
-
     render(){
         const { sortColumn, items } = this.state;
         const sorted = _.orderBy(items, [sortColumn.path], [sortColumn.order]);
