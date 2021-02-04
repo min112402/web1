@@ -3,18 +3,35 @@
     width: 100%;
     position: fixed;
 }
-.background{
+.background, .background2{
     position: absolute;
     width: 100%;
 }
+
 .background2{
-    width: 100%;
-}
-.manWrapper{
-
+  display: none;
 }
 
-.man1{
+.hand{
+    width: 28.6%;
+    position: absolute;
+    left: 35.3%;
+    top: -9.5vw;
+}
+
+.mainlogo{
+  max-width: 67.7%;
+  position: fixed;
+  left: 16%;
+  top: 16.5vw;
+  display: none;
+}
+
+.man1, .man2{
     position: fixed;
     width: 100%;
+}
+
+.man2{
+  display: none;
 }
