@@ -78,7 +78,7 @@
       text-align: center;
       padding: 10px;
     }
-    
+
     .linkWrapper .icon {
       display: none;
     }
@@ -92,13 +92,13 @@
         font-size: 20px;
       }
     }
-    @media screen and ( max-width:950px ) {
+    @media screen and ( max-width:1025px ) {
       .nav{display: block;}
       .imageWrapper { display: none; }
       .logoWrapper {display: none;}
       .linkWrapper a:not(:first-child) { display: none; }
-      .linkWrapper a:first-child { 
-        display: block !important; 
+      .linkWrapper a:first-child {
+        display: block !important;
         text-align: center;
       }
 
