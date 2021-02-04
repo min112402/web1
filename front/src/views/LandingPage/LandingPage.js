@@ -17,7 +17,7 @@ class LandingPage extends React.Component {
       this.scrollAction = this.scrollAction.bind(this)
     }
     componentDidMount(){
-      window.addEventListener('wheel', this.scrollAction)
+      document.addEventListener('wheel', this.scrollAction)
     }
     /* delay(gap){
         var now, then;
@@ -52,6 +52,7 @@ class LandingPage extends React.Component {
           logo.style.display = 'block'
         }, 2400)
         this.state.y = -1
+        document.removeEventListener('wheel', this.scrollAction)
       }else if(this.state.y <= -9.75){
         this.state.y = -9.75
       }
