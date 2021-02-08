@@ -31,10 +31,10 @@ class PortfolioList extends React.Component {
         const { sortColumn, items } = this.state;
         const sorted = _.orderBy(items, [sortColumn.path], [sortColumn.order]);
         return(
-            <div>
+            <div className="listWrapper">
                 <div className="itemListNav">
-                    <button onClick = {() => this.handleSort('production_date')} >date</button>
-                    <button onClick = {() => this.handleSort('title')} >title</button>
+                    <button onClick = {() => this.handleSort('production_date')} >DATE</button>
+                    <button onClick = {() => this.handleSort('title')} >TITLE</button>
                 </div>
                 <div className="itemContainerWrapper">
                     <div className="itemContainer">
@@ -47,7 +47,7 @@ class PortfolioList extends React.Component {
                                     <div className="info">
                                         {portfolio.title}
                                     </div>
-                                    
+
                                 </div>
                             </Link>
                         ))}

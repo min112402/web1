@@ -83,6 +83,70 @@
       display: none;
     }
 
+    .modalWrapper{
+      position: fixed;
+      top: 0;
+      bottom: 0;
+      right: 0;
+      left: 0;
+      background: #00000099;
+      z-index: 10000;
+    }
+
+    .modalContainer{
+      position: absolute;
+      left: 20%;
+      top: 10%;
+      width: 60%;
+      height: 80%;
+      background: #ffffff;
+      font-family: Helvetica;
+      font-weight: bold;
+      border-radius: 10px;
+    }
+
+    .modalNav{
+      font-size: 20px;
+      display: block;
+      margin-top: 10px;
+      text-align: center;
+    }
+
+    .img{
+      width: 10vw;
+      border-radius: 30px;
+    }
+
+    .profileWrapper{
+      height: 85%;
+      display: flex;
+    }
+
+    .profile{
+      margin-top: 10%;
+      flex: 1;
+      display: inline-block;
+      align-items: center;
+      font-family: Helvetica;
+      text-align: center;
+    }
+
+    .information{
+      margin-top: 10px;
+      font-weight: lighter;
+    }
+
+    .foot{
+      font-size: 15px;
+      margin-bottom: 10px;
+      font-weight: border;
+      text-align: center;
+    }
+
+    .modalContainer a, .modalContainer a:hover, .modalContainer a:visited{
+        text-decoration: none;
+    }
+
     @media (max-width: 1200px) {
       .logo{
         max-width: 300px;

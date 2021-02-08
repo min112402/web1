@@ -1,6 +1,5 @@
 .itemListNav{
-    display: flex;
-    float: right;
+  margin-right: 5px;
 }
 
 .itemContainer .thumbnail{
@@ -9,10 +8,14 @@
 }
 .itemListNav button{
     font-size: 12px;
-    float: right;
+    font-style: oblique;
+    border-radius: 2px;
     border: 1px solid gray;
-    background-color: rgba(0,0,0,0);
-    color: gray; padding: 5px;
+    background-color: black;
+    color: white; padding: 5px;
+}
+.itemListNav button:visited{
+    color: gold;
 }
 .itemContainerWrapper{
     margin-top: 50px;

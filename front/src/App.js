@@ -23,7 +23,7 @@ class App extends React.Component {
         </Helmet>
         <Nav />
         <Fragment>
-          <div class="contentContainer">
+          <div className="contentContainer">
             <Switch>
               <Route exact path="/" component={LandingPage} />
               <Route path="/shop" component={Shop} />

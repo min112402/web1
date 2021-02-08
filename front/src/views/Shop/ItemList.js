@@ -20,15 +20,20 @@ class ItemList extends React.Component {
                 this.setState({items: itemList})
             })
     }
+    // displaying(e){
+    //   let highlighted = document.getElementById(e);
+    //   console.log(e);
+    //   highlighted.style.color = 'gold';
+    // }
     handleSort(path) {
         const sortColumn = { ...this.state.sortColumn };
         if (sortColumn.path === path) sortColumn.order = sortColumn.order === 'asc' ? 'desc' : 'asc';
         else {
             sortColumn.path = path;
             sortColumn.order = 'asc';
-        }   
+        }
         this.setState({ sortColumn });
-	}
+	  }
     addComma(num) {
         var regexp = /\B(?=(\d{3})+(?!\d))/g;
         return num.toString().replace(regexp, ',');
@@ -38,12 +43,13 @@ class ItemList extends React.Component {
     render(){
         const { sortColumn, items } = this.state;
         const sorted = _.orderBy(items, [sortColumn.path], [sortColumn.order]);
+        //this.displaying(sortColumn.path);
         return(
             <div>
                 <div className="itemListNav">
-                    <button onClick = {() => this.handleSort('production_date')} >date</button>
-                    <button onClick = {() => this.handleSort('price')} >price</button>
-                    <button onClick = {() => this.handleSort('name')} >name</button>
+                    <button id="production_date" onClick = {() => this.handleSort('production_date')} >DATE</button>
+                    <button id="price" onClick = {() => this.handleSort('price')} >PRICE</button>
+                    <button id="name" onClick = {() => this.handleSort('name')} >NAME</button>
                 </div>
                 <div className="itemContainerWrapper">
                     <div className="itemContainer">

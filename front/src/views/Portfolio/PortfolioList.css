@@ -1,3 +1,6 @@
+.listWrapper{
+  width: 100%;
+}
 
 .itemListNav{
     display: flex;

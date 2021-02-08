@@ -17,6 +17,13 @@
     position: absolute;
     left: 35.3%;
     top: -9.5vw;
+    display: none;
+}
+
+.grass{
+  width: 100%;
+  top: -0vw;
+  position: fixed;
 }
 
 .mainlogo{

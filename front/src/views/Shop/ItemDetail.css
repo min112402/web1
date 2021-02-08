@@ -15,7 +15,7 @@
     border: 0;
     clear:both;
     display:block;
-    width: 96%;               
+    width: 96%;
     background-color:rgb(87, 87, 87);
     height: 1px;
     margin: 0;
@@ -51,9 +51,12 @@
     margin-top: 30px;
 }
 
+.details{
+  margin-top: 50px;
+}
 
 .body{
-    display: flex;   
+    display: flex;
 }
 
 .button, .button:visited{

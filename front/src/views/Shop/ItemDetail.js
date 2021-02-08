@@ -27,13 +27,13 @@ class ItemDetail extends React.Component {
             path : props.match.path
         }
     }
-    
+
 
     componentDidMount() {
         let name = this.state.name
         console.log(name)
         console.log(typeof(name))
-        
+
         fetch("/api/item/"+name)
             .then(response =>response.json())
             .then(itemDetail => {
@@ -45,13 +45,12 @@ class ItemDetail extends React.Component {
 
     render(){
         const details = _.map(this.state.images,(detail=> <img src = {detail.image}/>))
-        console.log(details)
-        return(            
+        return(
             <div className="itemDetailContainerWrapper">
                 <div className="itemDetailContainer">
                     <div className="itemDetail">
                         <div className ="detailImage">
-                            <img src={this.state.image}></img> 
+                            <img src={this.state.image}></img>
                         </div>
                         <div className = "info">
                             <span>{this.state.name} </span>
@@ -59,13 +58,13 @@ class ItemDetail extends React.Component {
                             <span>price: {this.state.price}  </span>
                             <ColoredLine color="gray"/>
                             <br/>
-                            <a className="button" href={this.state.link}>BUY</a> 
+                            <a className="button" href={this.state.link}>BUY</a>
                             <ColoredLine color="gray"/>
                             <br/>
                             <span>{this.state.detail}</span>
                         </div>
                     </div>
-                    <div>{details}</div>
+                    <div className = "details">{details}</div>
 
                 </div>
             </div>

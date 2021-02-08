@@ -7,6 +7,7 @@ import man1 from "../../man1.png"
 import man2 from "../../man2.png"
 import hand from "../../hand.png"
 import logo from "../../landingPageLogo.png"
+import grass from "../../screen.png"
 
 class LandingPage extends React.Component {
     constructor(props){
@@ -17,7 +18,10 @@ class LandingPage extends React.Component {
       this.scrollAction = this.scrollAction.bind(this)
     }
     componentDidMount(){
-      document.addEventListener('wheel', this.scrollAction)
+      document.addEventListener('wheel', this.scrollAction);
+    }
+    componentWillUnmount(){
+      document.removeEventListener('wheel', this.scrollAction);
     }
     /* delay(gap){
         var now, then;
@@ -39,6 +43,7 @@ class LandingPage extends React.Component {
       let hand = document.getElementById("hand")
       let bg2 = document.getElementById("bg2")
       let logo = document.getElementById("mainlogo")
+      let grass = document.getElementById("grass")
       hand.style.top = this.state.y + 'vw'
       if(this.state.y >= -1){
         setTimeout(()=> {
@@ -55,6 +60,11 @@ class LandingPage extends React.Component {
         document.removeEventListener('wheel', this.scrollAction)
       }else if(this.state.y <= -9.75){
         this.state.y = -9.75
+        hand.style.display = 'none'
+        grass.style.display = 'block'
+      }else{
+        hand.style.display = 'block'
+        grass.style.display = 'none'
       }
     }
 
@@ -66,6 +76,7 @@ class LandingPage extends React.Component {
                     <img className="background2" id="bg2" src={people} alt=""></img>
                     <img className="background" src={background} alt=""></img>
                     <img className="hand" id="hand" src={hand} alt=""></img>
+                    <img className="grass" id="grass" src={grass} alt=""></img>
                 </div>
                 <div className="manWrapper">
                     <img className="man1" id="man1" src={man1} alt="" ></img>
