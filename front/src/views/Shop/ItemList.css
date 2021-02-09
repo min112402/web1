@@ -6,9 +6,14 @@
     display: block;
     object-fit: cover;
 }
+
+.itemListNav img{
+    padding:0;
+    cursor: pointer;
+}
+
 .itemListNav button{
     font-size: 12px;
-    font-style: oblique;
     border-radius: 2px;
     border: 1px solid gray;
     background-color: black;
@@ -17,6 +22,7 @@
 .itemListNav button:visited{
     color: gold;
 }
+
 .itemContainerWrapper{
     margin-top: 50px;
     width: 100%;
@@ -26,16 +32,17 @@
 
 .itemContainer{
     font-family: helvetica;
-    font-weight: bold;
     width: 90vw;
     display: flex;
     flex-flow: row wrap;
     margin: 0px;
     padding: 0px;
 }
+
 .itemContainer a{
     padding: 0px;
 }
+
 .itemContainer a:hover{
     color: black;
     text-decoration-line: black;

@@ -4,6 +4,9 @@ import {Link}  from "react-router-dom"
 import _ from 'lodash'
 import frame4 from "../../frame4.png"
 import frame2 from "../../frame2.png"
+import name from "../../images/buttons/name.png"
+import date from "../../images/buttons/date.png"
+import price from "../../images/buttons/price.png"
 
 class ItemList extends React.Component {
     constructor(props){
@@ -39,7 +42,6 @@ class ItemList extends React.Component {
         return num.toString().replace(regexp, ',');
     };
 
-
     render(){
         const { sortColumn, items } = this.state;
         const sorted = _.orderBy(items, [sortColumn.path], [sortColumn.order]);
@@ -47,9 +49,9 @@ class ItemList extends React.Component {
         return(
             <div>
                 <div className="itemListNav">
-                    <button id="production_date" onClick = {() => this.handleSort('production_date')} >DATE</button>
-                    <button id="price" onClick = {() => this.handleSort('price')} >PRICE</button>
-                    <button id="name" onClick = {() => this.handleSort('name')} >NAME</button>
+                    <img src={date}  id="production_date" onClick = {() => this.handleSort('production_date')} ></img>
+                    <img src={price} id="price" onClick = {() => this.handleSort('price')} ></img>
+                    <img src={name} id="name" onClick = {() => this.handleSort('name')}></img>
                 </div>
                 <div className="itemContainerWrapper">
                     <div className="itemContainer">
@@ -64,7 +66,7 @@ class ItemList extends React.Component {
                                         {item.name}
                                     </div>
                                     <span>
-                                        {this.addComma(item.price)} &#x20a9;
+                                     &#x20a9; {this.addComma(item.price)}
                                     </span>
                                 </div>
                             </Link>

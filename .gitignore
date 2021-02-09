@@ -1,7 +1,6 @@
-front/node_modules/.cache
+node_modules/
 test_data
 .cache
 __pycache__
-/node_modules/
 settings.py
 build/

@@ -2,6 +2,8 @@ import React from 'react'
 import './PortfolioList.css'
 import {Link}  from "react-router-dom"
 import _ from 'lodash'
+import title from "../../images/buttons/title.png"
+import date from "../../images/buttons/date.png"
 
 class PortfolioList extends React.Component {
     constructor(props){
@@ -33,8 +35,8 @@ class PortfolioList extends React.Component {
         return(
             <div className="listWrapper">
                 <div className="itemListNav">
-                    <button onClick = {() => this.handleSort('production_date')} >DATE</button>
-                    <button onClick = {() => this.handleSort('title')} >TITLE</button>
+                    <img src={date} onClick = {() => this.handleSort('production_date')} ></img>
+                    <img src={title} onClick = {() => this.handleSort('title')} ></img>
                 </div>
                 <div className="itemContainerWrapper">
                     <div className="itemContainer">
