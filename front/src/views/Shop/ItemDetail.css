@@ -42,9 +42,13 @@
     display: flex;
     flex-direction: column;
 }
-.itemDetail .info span {
+.itemDetail .info p {
     margin: 0;
     padding: 0px;
+}
+
+.itemDetail .info .name {
+    font-size: 25px;
 }
 
 .body{
@@ -68,6 +72,7 @@
 }
 
 .button:hover, .button:visited:hover {
+    color:white;
     text-decoration: none;
     opacity: 0.7;
 }
@@ -80,6 +85,9 @@
         width: 100%;
         padding: 0;
         font-size: 13px;
+    }
+    .itemDetail .info .name {
+        font-size: 18px;
     }
     .itemDetail{
         flex-direction: column;

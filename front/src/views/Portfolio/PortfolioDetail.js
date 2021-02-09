@@ -43,7 +43,7 @@ class PortfolioDetail extends React.Component {
 
     render(){
         const details = _.map(this.state.images,(detail=> <img src = {detail.image}/>))
-        console.log(details)
+        const detailText = typeof this.state.detail === 'string' ? this.state.detail.split('\n').map( line => {return (<p>{line}<br/></p>)}) : ""
         return(            
             <div className="itemDetailContainerWrapper">
                 <div className="itemDetailContainer">
@@ -52,11 +52,11 @@ class PortfolioDetail extends React.Component {
                             <img src={this.state.image}></img> 
                         </div>
                         <div className = "info">
-                            <span>{this.state.title} </span>
+                            <div className="name">{this.state.title} </div>
                             <ColoredLine color="gray"/>
-                            <span>{this.state.detail}</span>
+                            <div>{detailText}</div>
                             <ColoredLine color="gray"/>
-                            <span>{this.state.production_date}</span>
+                            <div>{this.state.production_date}</div>
                         </div>
                     </div>
                     <div>{details}</div>
