@@ -90,7 +90,7 @@ class Item(models.Model):
         return self.name
     
     def save(self, *args, **kargs):
-        if not make_thumbnail():
+        if not make_thumbnail(self):
             raise  Exception('Could not create thumbnail - is the file type valid?')
         super(Item, self).save(*args, **kargs)
 

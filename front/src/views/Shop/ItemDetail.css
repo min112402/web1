@@ -23,7 +23,7 @@
 
 .itemDetailContainer{
     display: flex;
-    width: 85%;
+    width: 80%;
     flex-direction: column;
     text-align: center;
 }

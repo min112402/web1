@@ -25,7 +25,7 @@ SECRET_KEY = 'dokydrvnph&lu0j!db^pwp^i8yb)t-q=nhyl+iv=$ompz4i=iy'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['kwonthefactory.com','www.kwonthefactory.com','127.0.0.1','.localhost']
+ALLOWED_HOSTS = ['kwonthefactory.com','127.0.0.1','.localhost']
 
 
 # Application definition
@@ -128,6 +128,7 @@ USE_L10N = True
 USE_TZ = True
 
 
+
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
@@ -136,5 +137,5 @@ STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
-# Cors setting 
+# Cors setting
 CORS_ORIGIN_ALLOW_ALL = True
