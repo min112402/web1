@@ -60,7 +60,7 @@ function Nav() {
                     </a>
                 </div>
                 <div className="imageWrapper">
-                    <Link to="/"> <img className="image" id="light" src={light} alt="guy" onClick={easterEgg}/>
+                    <Link to="/">
                                 <img className="image" id="g" src={img2} alt="guy" onClick={easterEgg}/>
                                 <img className="image2" id="w" src={img1} alt="guy" onClick={easterEgg}/></Link>
                 </div>

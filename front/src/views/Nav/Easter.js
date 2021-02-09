@@ -3,6 +3,7 @@ import logo from "../../landingPageLogo.png"
 import './Nav.css'
 import * as Nav from './Nav'
 import jh from "../../jh.jpg"
+import hj from "../../hj.jpg"
 import profile from "../../profile.png"
 
 class Easter extends React.Component{
@@ -37,12 +38,13 @@ class Easter extends React.Component{
             </div>
             <div className = "profile">
               <div>
-                  <img className="img" src={profile} />
+                  <img className="img" src={hj} />
               </div>
               <div className="information">
                 <strong> 권혁진 </strong> <br />
-                <a href="https://www.instagram.com/kwon_thefact0ry/" target="_blank"> @??? </a> <br/>
-                designer
+                <a href="https://www.instagram.com/kwon__hkj1n/" target="_blank"> @kwon__hkj1n </a> <br/>
+                designer <br />
+                naxya0517@gmail.com
               </div>
             </div>
             <div className = "profile">
@@ -51,13 +53,14 @@ class Easter extends React.Component{
               </div>
               <div className="information">
                 <strong> 이상민 </strong> <br />
-                <a href="https://www.instagram.com/kwon_thefact0ry/" target="_blank"> @??? </a> <br/>
-                full-stack web dev.
+                <a href="https://github.com/min112402" target="_blank"> @min112402 </a> <br/>
+                full-stack web dev. <br />
+              min112402@gmail.com
               </div>
             </div>
           </div>
           <div className="foot">
-           TEAM ???
+           &lt; TEAM HRSH &gt;
           </div>
         </div>
       </div>

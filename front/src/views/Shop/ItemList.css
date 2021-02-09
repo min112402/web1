@@ -10,6 +10,7 @@
 .itemListNav img{
     padding:0;
     cursor: pointer;
+    width: 50px;
 }
 
 .itemListNav button{

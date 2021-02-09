@@ -10,6 +10,7 @@ import phone from "../../phone.png"
 import ringing from "../../ringing.png"
 import logo from "../../landingPageLogo.png"
 import grass from "../../screen.png"
+import mobile from "../../mobile.png"
 
 class LandingPage extends React.Component {
     constructor(props){
@@ -30,23 +31,23 @@ class LandingPage extends React.Component {
     ringring(){
       let phone = document.getElementById("phone")
       let ringing = document.getElementById("ringing")
-        let loop = setInterval(()=>{
-            phone.style.display = 'none'
-            ringing.style.display = 'block'
+      let loop = setInterval(()=>{
             if(this.state.y == -1){
               clearInterval(loop)
+              clearTimeout(ringaring)
+              return;
             }
-        }, 4000)
+            phone.style.display = 'none'
+            ringing.style.display = 'block'
+            var ringaring = setTimeout( () => {
+                if(this.state.y == -1){
+                  return;
+                }
+                phone.style.display = 'block'
+                ringing.style.display = 'none'
+            }, 1500)
 
-        setTimeout( () => {
-        let loop2 = setInterval(()=>{
-            phone.style.display = 'block'
-            ringing.style.display = 'none'
-            if(this.state.y == -1){
-              clearInterval(loop2)
-            }
-        }, 4000)
-      } , 1500 )
+        }, 2500)
     }
     scrollAction(event){
       if(event.deltaY>0){
@@ -72,6 +73,8 @@ class LandingPage extends React.Component {
           man2.className = "man22"
           phone.className = "phonee"
           ringing.className = "ringingg"
+          phone.style.display = 'none'
+          ringing.style.display = 'block'
         }, 400)
         setTimeout(()=> {
           bg2.style.display = 'block'
@@ -95,6 +98,9 @@ class LandingPage extends React.Component {
     render(){
         return (
             <div className="landingPage">
+                <div className="mobileWrapper">
+                    <img className="mobile" src={mobile} alt=""></img>
+                </div>
                 <div className="backgroundWrapper" onLoad={this.ringring}>
                     <img className="background2" id="bg2" src={people} alt=""></img>
                     <img className="background" src={background} alt=""></img>

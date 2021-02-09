@@ -1,3 +1,6 @@
+.mobile{
+  display: none;
+}
 
 .backgroundWrapper{
     width: 100%;
@@ -13,15 +16,17 @@
 }
 
 .phone, .ringing{
+  left: -20px;
   width: 100%;
   position: fixed;
   animation-name: floating2;
   animation-direction: alternate;
   animation-iteration-count: infinite;
-  animation-duration: 4s;
+  animation-duration: 1.3s;
 }
 
 .phonee, .ringingg{
+  left: -20px;
   width: 100%;
   position: fixed;
 }
@@ -40,7 +45,7 @@
 
 .grass{
   width: 100%;
-  top: -70px;
+  top: -60px;
   position: absolute;
 }
 
@@ -57,7 +62,7 @@
     animation-name: floating;
     animation-direction: alternate;
     animation-iteration-count: infinite;
-    animation-duration: 2s;
+    animation-duration: 1.3s;
 }
 
 .man11, .man22{
@@ -68,20 +73,36 @@
 
 @keyframes floating {
   from{
-    padding-top: 2px;
+    padding-top: 3px;
   }
   to{
+    padding-top: -3px;
   }
 }
 
 @keyframes floating2 {
   from{
-    padding-top: 1px;
+    padding-top: 2px;
   }
   to{
+    padding-top: -2px;
   }
 }
 
 .man2{
   display: none;
+}
+
+@media (max-width: 1024px) {
+  .backgroundWrapper, .manWrapper{
+    display: none;
+  }
+  .mobileWrapper{
+    display: flex;
+    width: 100%;
+  }
+  .mobile{
+    display: block;
+    width: inherit;
+  }
 }
