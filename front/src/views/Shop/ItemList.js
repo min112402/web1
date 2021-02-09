@@ -4,9 +4,9 @@ import {Link}  from "react-router-dom"
 import _ from 'lodash'
 import frame4 from "../../frame4.png"
 import frame2 from "../../frame2.png"
-import name from "../../NAME.png"
-import date from "../../DATE.png"
-import price from "../../PRICE.png"
+import name from "../../images/buttons/name.png"
+import date from "../../images/buttons/date.png"
+import price from "../../images/buttons/price.png"
 
 class ItemList extends React.Component {
     constructor(props){
@@ -66,7 +66,7 @@ class ItemList extends React.Component {
                                         {item.name}
                                     </div>
                                     <span>
-                                        {this.addComma(item.price)} &#x20a9;
+                                     &#x20a9; {this.addComma(item.price)}
                                     </span>
                                 </div>
                             </Link>

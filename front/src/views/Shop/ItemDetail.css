@@ -15,7 +15,7 @@
     border: 0;
     clear:both;
     display:block;
-    width: 96%;
+    width: 100%;
     background-color:rgb(87, 87, 87);
     height: 1px;
     margin: 0;
@@ -23,7 +23,7 @@
 
 .itemDetailContainer{
     display: flex;
-    width: 60%;
+    width: 80%;
     flex-direction: column;
     text-align: center;
 }
@@ -38,17 +38,22 @@
 
 .itemDetail .info{
     width: 50%;
-    padding: 50px;
+    padding-top: 50px;
+    padding-left: 50px;
     display: flex;
     flex-direction: column;
 }
-.itemDetail .info p {
-    margin: 0;
-    padding: 0px;
-}
 
+.itemDetail .info div{
+    display: block;
+    text-align: left;
+    margin: 0;
+    padding-top: 3px;
+    padding-bottom: 3px;
+    word-break: break-all;
+}
 .itemDetail .info .name {
-    font-size: 25px;
+    font-size: 40px;
 }
 
 .body{
@@ -87,7 +92,7 @@
         font-size: 13px;
     }
     .itemDetail .info .name {
-        font-size: 18px;
+        font-size: 26px;
     }
     .itemDetail{
         flex-direction: column;

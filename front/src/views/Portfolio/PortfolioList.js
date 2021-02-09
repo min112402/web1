@@ -2,8 +2,8 @@ import React from 'react'
 import './PortfolioList.css'
 import {Link}  from "react-router-dom"
 import _ from 'lodash'
-import name from "../../NAME.png"
-import date from "../../DATE.png"
+import title from "../../images/buttons/title.png"
+import date from "../../images/buttons/date.png"
 
 class PortfolioList extends React.Component {
     constructor(props){
@@ -36,7 +36,7 @@ class PortfolioList extends React.Component {
             <div className="listWrapper">
                 <div className="itemListNav">
                     <img src={date} onClick = {() => this.handleSort('production_date')} ></img>
-                    <img src={name} onClick = {() => this.handleSort('title')} ></img>
+                    <img src={title} onClick = {() => this.handleSort('title')} ></img>
                 </div>
                 <div className="itemContainerWrapper">
                     <div className="itemContainer">

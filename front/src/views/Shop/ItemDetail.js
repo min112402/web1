@@ -56,7 +56,7 @@ class ItemDetail extends React.Component {
                         <div className = "info">
                             <div className="name">{this.state.name} </div>
                             <ColoredLine color="gray"/>
-                            <div>{this.state.price} &#x20a9;</div>
+                            <div>&#x20a9; {this.state.price}</div>
                             <ColoredLine color="gray"/>
                             <br/>
                             <a className="button" href={this.state.link}>BUY</a>

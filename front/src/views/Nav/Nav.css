@@ -7,7 +7,6 @@
     .nav{
       z-index: 2;
       background-color: black;
-      font-weight: 900;
       position: fixed;
       width: 100%;
       flex-direction: row;
@@ -133,13 +132,12 @@
 
     .information{
       margin-top: 10px;
-      font-weight: lighter;
+      font-weight: 400;
     }
 
     .foot{
       font-size: 15px;
       margin-bottom: 10px;
-      font-weight: border;
       text-align: center;
     }
 

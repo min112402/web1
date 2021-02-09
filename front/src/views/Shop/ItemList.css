@@ -32,7 +32,6 @@
 
 .itemContainer{
     font-family: helvetica;
-    font-weight: bold;
     width: 90vw;
     display: flex;
     flex-flow: row wrap;
