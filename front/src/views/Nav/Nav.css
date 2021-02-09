@@ -79,6 +79,7 @@
       height:100%;
     }
     .nav a, .nav a:visited .nav a:hover, .nav a:visited:hover {
+      font-weight: 1000;
       color : white;
       text-decoration: none;
       text-align: center;

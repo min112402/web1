@@ -27,11 +27,11 @@ class PortfolioDetail extends React.Component {
             path : props.match.path
         }
     }
-    
+
 
     componentDidMount() {
         let title = this.state.title
-        
+
         fetch("/api/portfolio/"+title)
             .then(response =>response.json())
             .then(itemDetail => {
@@ -44,17 +44,17 @@ class PortfolioDetail extends React.Component {
     render(){
         const details = _.map(this.state.images,(detail=> <img src = {detail.image}/>))
         const detailText = typeof this.state.detail === 'string' ? this.state.detail.split('\n').map( line => {return (<p>{line}<br/></p>)}) : ""
-        return(            
+        return(
             <div className="itemDetailContainerWrapper">
                 <div className="itemDetailContainer">
                     <div className="itemDetail">
                         <div className ="detailImage">
-                            <img src={this.state.image}></img> 
+                            <img src={this.state.image}></img>
                         </div>
                         <div className = "info">
                             <div className="name">{this.state.title} </div>
                             <ColoredLine color="gray"/>
-                            <div>{detailText}</div>
+                            <div className="detailtxt">{detailText}</div>
                             <ColoredLine color="gray"/>
                             <div>{this.state.production_date}</div>
                         </div>

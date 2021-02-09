@@ -8,7 +8,7 @@ from factory import settings
 class ItemListSerializer(serializers.ModelSerializer):
     class Meta:
         model = Item
-        fields = ('name', 'thumbnail', 'price', 'production_date')
+        fields = ('name', 'thumbnail', 'price', 'production_date', 'detail', 'link')
 
 class ItemListView(generics.ListAPIView):
     queryset = Item.objects.all().order_by('-production_date')
@@ -27,7 +27,7 @@ class ItemListView(generics.ListAPIView):
         return Response(serializer.data)
 
 
-# detail images 
+# detail images
 class ItemImagesSerializer(serializers.ModelSerializer):
     image = serializers.SerializerMethodField() #디테일 이미지
     def get_image(self, obj):
@@ -43,15 +43,15 @@ class ItemImagesView(viewsets.ModelViewSet):
 # Item - detail view
 class ItemSerializer(serializers.ModelSerializer):
     image = serializers.SerializerMethodField() #대표 이미지
-    images = ItemImagesSerializer(many=True, read_only = True) # 설명 
-    #images = serializers.RelatedField(source='itemimages', read_only = True) # 설명 
-    
+    images = ItemImagesSerializer(many=True, read_only = True) # 설명
+    #images = serializers.RelatedField(source='itemimages', read_only = True) # 설명
+
     def get_image(self, obj):
         return f'{settings.MEDIA_URL}{obj.image}'
 
     class Meta:
         model = Item
-        fields = ('name', 'image', 'price', 'production_date','link','images')
+        fields = ('name', 'image', 'price', 'detail', 'production_date','link','images')
 
 
 class ItemView(generics.RetrieveAPIView):

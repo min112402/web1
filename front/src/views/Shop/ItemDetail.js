@@ -14,10 +14,11 @@ class ItemDetail extends React.Component {
     state = {
         name : '',
         image : '',
-        detail : '',
         price : 0,
+        production_date : '',
         link : '',
         images:[],
+        detail : '',
     }
 
     constructor(props){
@@ -31,9 +32,6 @@ class ItemDetail extends React.Component {
 
     componentDidMount() {
         let name = this.state.name
-        console.log(name)
-        console.log(typeof(name))
-
         fetch("/api/item/"+name)
             .then(response =>response.json())
             .then(itemDetail => {
@@ -42,10 +40,8 @@ class ItemDetail extends React.Component {
             })
     }
 
-
     render(){
-        const details = _.map(this.state.images,(detail=> <img src = {detail.image}/>))
-        const detailText = typeof this.state.detail === String ? this.state.detail.split('\n').map( line => {return (<p>{line}<br/></p>)}) : ""
+        const details = _.map(this.state.images,(d=> <img src = {d.image}/>))
         return(
             <div className="itemDetailContainerWrapper">
                 <div className="itemDetailContainer">
@@ -56,13 +52,13 @@ class ItemDetail extends React.Component {
                         <div className = "info">
                             <div className="name">{this.state.name} </div>
                             <ColoredLine color="gray"/>
-                            <div>&#x20a9; {this.state.price}</div>
+                            <div>&#x20a9;{this.state.price && this.state.price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',')}</div>
                             <ColoredLine color="gray"/>
                             <br/>
                             <a className="button" href={this.state.link}>BUY</a>
                             <ColoredLine color="gray"/>
                             <br/>
-                            <div>{detailText}</div>
+                            <div className="detailtxt">{this.state.detail}</div>
                         </div>
                     </div>
                     <div className = "details">{details}</div>
