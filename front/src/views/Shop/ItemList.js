@@ -20,11 +20,11 @@ class ItemList extends React.Component {
                 this.setState({items: itemList})
             })
     }
-    // displaying(e){
-    //   let highlighted = document.getElementById(e);
-    //   console.log(e);
-    //   highlighted.style.color = 'gold';
-    // }
+    displaying(e){
+      let highlighted = document.getElementById(e);
+      console.log(e);
+      highlighted.style.color = 'gold';
+    }
     handleSort(path) {
         const sortColumn = { ...this.state.sortColumn };
         if (sortColumn.path === path) sortColumn.order = sortColumn.order === 'asc' ? 'desc' : 'asc';

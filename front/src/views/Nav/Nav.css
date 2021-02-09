@@ -46,6 +46,13 @@
       object-fit: contain;
     }
 
+    .image2{
+      margin-left: auto;
+      height: 100%;
+      object-fit: contain;
+      display: none;
+    }
+
     .logo{
       margin-bottom: auto;
       max-height: 40px;

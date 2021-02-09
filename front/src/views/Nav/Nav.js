@@ -2,16 +2,31 @@ import React, { useState } from 'react'
 import {Link} from "react-router-dom"
 import './Nav.css'
 import logo from "../../logo.png"
+import img1 from "../../wink.png"
 import img2 from "../../img2.png"
 import { render } from '@testing-library/react'
 import Easter from "./Easter"
+import light from "../../light.png"
 
 function Nav() {
         var cnt = 0;
+        var isWink = false;
         const [isModalOn, setIsModalOn] = useState(false);
         function easterEgg(e){
           cnt++;
-          if(cnt==3){
+          let guy = document.getElementById("w");
+          let wink = document.getElementById("g");
+          console.log(isWink);
+          if(isWink){
+            guy.style.display = 'none';
+            wink.style.display = 'block';
+          }
+          else{
+            guy.style.display = 'block';
+            wink.style.display = 'none';
+          }
+          isWink = !isWink;
+          if(cnt==2){
             setIsModalOn(true)
             cnt=0;
           }else setIsModalOn(false);
@@ -45,7 +60,9 @@ function Nav() {
                     </a>
                 </div>
                 <div className="imageWrapper">
-                    <Link to="/"><img className="image" src={img2} alt="img2" onClick={easterEgg}/></Link>
+                    <Link to="/"> <img className="image" id="light" src={light} alt="guy" onClick={easterEgg}/>
+                                <img className="image" id="g" src={img2} alt="guy" onClick={easterEgg}/>
+                                <img className="image2" id="w" src={img1} alt="guy" onClick={easterEgg}/></Link>
                 </div>
             </div>
             <div>
