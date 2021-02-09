@@ -9,6 +9,7 @@ import Shop from './views/Shop/Shop';
 import Contact from './views/Contact/Contact';
 
 import Nav from './views/Nav/Nav'
+import ScrollToTop from './ScrollToTop'
 const TITLE = "KWON_theFACT0RY"
 
 class App extends React.Component {
@@ -17,12 +18,12 @@ class App extends React.Component {
 
     return (
     <BrowserRouter >
+      <ScrollToTop></ScrollToTop>
       <div className="wrapper">
         <Helmet>
           <title>{TITLE}</title>
         </Helmet>
         <Nav />
-        <Fragment>
           <div className="contentContainer">
             <Switch>
               <Route exact path="/" component={LandingPage} />
@@ -31,7 +32,6 @@ class App extends React.Component {
               <Route path="/contact" component={Contact} />
             </Switch>
           </div>
-        </Fragment>
       </div>
     </BrowserRouter>
 
