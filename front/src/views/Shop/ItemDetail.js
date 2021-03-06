@@ -42,6 +42,7 @@ class ItemDetail extends React.Component {
 
     render(){
         const details = _.map(this.state.images,(d=> <img src = {d.image}/>))
+        const detailText = typeof this.state.detail === 'string' ? this.state.detail.split('\n').map( line => {return (<p>{line}<br/></p>)}) : ""
         return(
             <div className="itemDetailContainerWrapper">
                 <div className="itemDetailContainer">
@@ -58,7 +59,7 @@ class ItemDetail extends React.Component {
                             <a className="button" href={this.state.link}>BUY</a>
                             <ColoredLine color="gray"/>
                             <br/>
-                            <div className="detailtxt">{this.state.detail}</div>
+                            <div className="detailtxt">{detailText}</div>
                         </div>
                     </div>
                     <div className = "details">{details}</div>

@@ -98,11 +98,14 @@
     display: none;
   }
   .mobileWrapper{
-    display: flex;
+    display: block;
     width: 100%;
+    background: white;
   }
   .mobile{
     display: block;
     width: inherit;
+
+    background: white;
   }
 }

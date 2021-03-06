@@ -33,7 +33,7 @@ class Easter extends React.Component{
                 <strong> 강지혁 </strong> <br />
                 <a href="https://www.instagram.com/kangjirm/" target="_blank"> @kangjirm </a> <br/>
                 full-stack web dev. <br />
-                +8210-3623-1620
+                jhvictor4@wafflestudio.com
               </div>
             </div>
             <div className = "profile">

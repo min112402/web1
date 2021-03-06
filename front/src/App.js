@@ -10,6 +10,8 @@ import Contact from './views/Contact/Contact';
 
 import Nav from './views/Nav/Nav'
 import ScrollToTop from './ScrollToTop'
+import ogImage from './img2.png'
+
 const TITLE = "KWON_theFACT0RY"
 
 class App extends React.Component {
@@ -22,7 +24,9 @@ class App extends React.Component {
       <div className="wrapper">
         <Helmet>
           <title>{TITLE}</title>
-        </Helmet>
+       	  <meta property="og:site_name" content={TITLE}/>
+          <meta property="og:description" content={TITLE}/>
+	</Helmet>
         <Nav />
           <div className="contentContainer">
             <Switch>

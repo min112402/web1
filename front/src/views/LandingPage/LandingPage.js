@@ -10,7 +10,7 @@ import phone from "../../phone.png"
 import ringing from "../../ringing.png"
 import logo from "../../landingPageLogo.png"
 import grass from "../../screen.png"
-import mobile from "../../mobile.png"
+import mobile from "../../newMainImage.jpeg"
 
 class LandingPage extends React.Component {
     constructor(props){
